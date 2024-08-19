@@ -21,8 +21,14 @@ module.exports = {
         '2xl': '1400px'
       }
     },
+    fontFamily: {
+      main: ['Poppins', 'sans-serif']
+    },
     extend: {
       colors: {
+        purple: 'hsl(var(--purple))',
+        gold: 'hsl(var(--gold))',
+        turquoise: 'hsl(var(--turquoise))',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
