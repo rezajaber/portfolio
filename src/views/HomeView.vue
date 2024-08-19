@@ -14,13 +14,6 @@ import {
 import Button from '@/components/ui/button/Button.vue'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from '@/components/ui/carousel'
 </script>
 
 <template>
@@ -33,7 +26,7 @@ import {
           <CardTitle>
             <div class="flex items-center justify-between">
               <div class="text-white">
-                <p class="text-2xl font-semibold">Reza Jaber</p>
+                <p class="text-2xl font-medium">Reza Jaber</p>
                 <p class="text-xs">Frontend-Developer based in Hamburg, Germany</p>
               </div>
 
