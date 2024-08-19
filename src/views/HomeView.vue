@@ -2,16 +2,25 @@
 import {
   Linkedin,
   Github,
-  Mail,
-  ChevronDownIcon,
-  CircleIcon,
-  PlusIcon,
-  StarIcon
+  Mails,
+  MonitorSmartphone,
+  Code,
+  Brush,
+  ScrollText,
+  Layers3,
+  Projector
 } from 'lucide-vue-next'
 
 import Button from '@/components/ui/button/Button.vue'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel'
 </script>
 
 <template>
@@ -19,7 +28,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
     <!-- MAIN PAGE -->
 
     <div class="grid gap-2.5">
-      <Card class="border-none">
+      <Card class="">
         <CardHeader>
           <CardTitle>
             <div class="flex items-center justify-between">
@@ -56,51 +65,79 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
       </Card>
 
       <!-- WHAT I DO-->
-      <div class="flex gap-2.5">
-        <Card class="flex h-40 items-center justify-center border-none">
-          <CardHeader>
+      <div class="flex h-40 gap-2.5">
+        <Card class="flex flex-col justify-end gap-2.5">
+          <CardHeader class="">
+            <MonitorSmartphone class="stroke-gold h-5 w-5" />
             <CardTitle class="text-gold">Web & Mobile App</CardTitle>
           </CardHeader>
+          <CardDescription class="text-xs">
+            Transforming ideas into exceptional web and mobile app experiences.
+          </CardDescription>
         </Card>
 
-        <Card class="flex h-40 items-center justify-center border-none">
-          <CardHeader class="flex items-center justify-center">
+        <Card class="flex flex-col justify-end gap-2.5">
+          <CardHeader>
+            <Brush class="stroke-purple h-5 w-5" />
             <CardTitle class="text-purple">Design & Creative</CardTitle>
           </CardHeader>
+          <CardDescription class="text-xs">
+            Crafting visually stunning design that connects deeply with your audience.
+          </CardDescription>
         </Card>
 
-        <Card class="flex h-40 items-center justify-center border-none">
-          <CardHeader class="flex items-center justify-center">
+        <Card class="flex flex-col justify-end gap-2.5">
+          <CardHeader>
+            <Code class="stroke-turquoise h-5 w-5" />
             <CardTitle class="text-turquoise">Development</CardTitle>
           </CardHeader>
+          <CardDescription class="text-xs">
+            Crafting visually stunning design that connects deeply with your audience.
+          </CardDescription>
         </Card>
       </div>
 
-      <div class="flex gap-2.5">
-        <Card class="flex h-40 w-3/4 items-center justify-center">
+      <div class="flex h-56 gap-2.5">
+        <Card class="flex w-3/4 flex-col justify-end gap-2.5">
           <CardHeader>
-            <CardTitle class="text-white">Projects</CardTitle>
+            <Projector class="stroke-turquoise h-5 w-5" />
+            <CardTitle class="text-turquoise">Projects</CardTitle>
           </CardHeader>
+          <CardDescription class="w-72 text-xs">
+            Crafting visually stunning design that connects deeply with your audience.
+          </CardDescription>
         </Card>
 
-        <Card class="flex h-40 w-1/4 items-center justify-center border-none">
+        <Card class="flex w-1/4 flex-col justify-end gap-2.5">
           <CardHeader>
-            <CardTitle class="text-gold">Tech Stack</CardTitle>
+            <Layers3 class="stroke-turquoise h-5 w-5" />
+            <CardTitle class="text-turquoise">Tech Stack</CardTitle>
           </CardHeader>
+          <CardDescription class="text-xs">
+            Crafting visually stunning design that connects deeply with your audience.
+          </CardDescription>
         </Card>
       </div>
 
-      <div class="flex gap-2.5">
-        <Card class="flex h-40 w-1/4 items-center justify-center border-none">
-          <CardHeader>
-            <CardTitle class="text-turquoise">CV</CardTitle>
+      <div class="flex h-40 gap-2.5">
+        <Card class="flex w-1/4 flex-col justify-end gap-2.5">
+          <CardHeader class="">
+            <ScrollText class="stroke-gold h-5 w-5" />
+            <CardTitle class="text-gold">CV</CardTitle>
           </CardHeader>
+          <CardDescription class="text-xs">
+            Bringing your vison to life with the latest technology and design trends.
+          </CardDescription>
         </Card>
 
-        <Card class="flex h-40 w-3/4 items-center justify-center border-none">
-          <CardHeader>
+        <Card class="flex w-3/4 flex-col justify-end gap-2.5">
+          <CardHeader class="">
+            <Mails class="stroke-purple h-5 w-5" />
             <CardTitle class="text-purple">Contact</CardTitle>
           </CardHeader>
+          <CardDescription class="w-72 text-xs">
+            Bringing your vison to life with the latest technology and design trends.
+          </CardDescription>
         </Card>
       </div>
     </div>
