@@ -21,7 +21,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
     <!-- MAIN PAGE -->
 
     <div class="grid gap-2.5">
-      <Card class="">
+      <Card class="glassy">
         <CardHeader>
           <CardTitle>
             <div class="flex items-center justify-between">
@@ -59,7 +59,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
       <!-- WHAT I DO-->
       <div class="flex h-40 gap-2.5">
-        <Card class="flex flex-col justify-end gap-2.5">
+        <Card class="glassy flex flex-col justify-end gap-2.5">
           <CardHeader class="">
             <MonitorSmartphone class="stroke-gold h-5 w-5" />
             <CardTitle class="text-gold">Web & Mobile App</CardTitle>
@@ -69,7 +69,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
           </CardDescription>
         </Card>
 
-        <Card class="flex flex-col justify-end gap-2.5">
+        <Card class="glassy flex flex-col justify-end gap-2.5">
           <CardHeader>
             <Brush class="stroke-purple h-5 w-5" />
             <CardTitle class="text-purple">Design & Creative</CardTitle>
@@ -79,7 +79,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
           </CardDescription>
         </Card>
 
-        <Card class="flex flex-col justify-end gap-2.5">
+        <Card class="glassy flex flex-col justify-end gap-2.5">
           <CardHeader>
             <Code class="stroke-turquoise h-5 w-5" />
             <CardTitle class="text-turquoise">Development</CardTitle>
@@ -91,7 +91,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
       </div>
 
       <div class="flex h-56 gap-2.5">
-        <Card class="flex w-3/4 flex-col justify-end gap-2.5">
+        <Card class="glassy flex w-3/4 flex-col justify-end gap-2.5">
           <CardHeader>
             <Projector class="stroke-turquoise h-5 w-5" />
             <CardTitle class="text-turquoise">Projects</CardTitle>
@@ -101,7 +101,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
           </CardDescription>
         </Card>
 
-        <Card class="flex w-1/4 flex-col justify-end gap-2.5">
+        <Card class="glassy flex w-1/4 flex-col justify-end gap-2.5">
           <CardHeader>
             <Layers3 class="stroke-turquoise h-5 w-5" />
             <CardTitle class="text-turquoise">Tech Stack</CardTitle>
@@ -113,7 +113,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
       </div>
 
       <div class="flex h-40 gap-2.5">
-        <Card class="flex w-1/4 flex-col justify-end gap-2.5">
+        <Card class="glassy flex w-1/4 flex-col justify-end gap-2.5">
           <CardHeader class="">
             <ScrollText class="stroke-gold h-5 w-5" />
             <CardTitle class="text-gold">CV</CardTitle>
@@ -123,7 +123,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
           </CardDescription>
         </Card>
 
-        <Card class="flex w-3/4 flex-col justify-end gap-2.5">
+        <Card class="glassy flex w-3/4 flex-col justify-end gap-2.5">
           <CardHeader class="">
             <Mails class="stroke-purple h-5 w-5" />
             <CardTitle class="text-purple">Contact</CardTitle>
@@ -136,3 +136,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
     </div>
   </div>
 </template>
+
+<style scoped>
+.glassy {
+  /* From https://css.glass */
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12.4px);
+  -webkit-backdrop-filter: blur(12.4px);
+  border: 1px solid rgba(255, 255, 255, 0.23);
+}
+</style>
