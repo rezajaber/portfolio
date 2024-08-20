@@ -8,12 +8,12 @@ const showWelcome = ref(true)
 onMounted(() => {
   setTimeout(() => {
     showWelcome.value = false
-  }, 1500)
+  }, 2000) // Increased to 5 seconds to allow time for greetings to cycle
 })
 </script>
 
 <template>
-  <div class="dark relative min-h-screen overflow-hidden bg-background p-6">
+  <div class="dark relative min-h-screen overflow-hidden bg-background p-6 lg:p-0">
     <!-- Background elements -->
     <div class="absolute inset-0">
       <div class="glow-orb glow-purple"></div>
@@ -22,7 +22,7 @@ onMounted(() => {
     </div>
 
     <!-- Welcome Screen -->
-    <Transition name="fade">
+    <Transition name="spring" appear>
       <WelcomeScreen v-if="showWelcome" />
     </Transition>
 
@@ -42,9 +42,26 @@ onMounted(() => {
 /* ... (keep existing styles) ... */
 
 /* Add new transition styles */
+.spring-enter-active {
+  transition: opacity 0.5s ease;
+}
+
+.spring-leave-active {
+  transition: all 0.25s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.spring-enter-from,
+.spring-leave-to {
+  opacity: 0;
+}
+
+.spring-leave-to {
+  transform: translateY(-100%);
+}
+
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.25s ease;
 }
 
 .fade-enter-from,
