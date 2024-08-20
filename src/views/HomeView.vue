@@ -31,22 +31,13 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
         <div class="justify-bewtween flex gap-2.5">
           <Button size="sm" class="hidden lg:block" variant="link">English</Button>
 
-          <Button
-            size="sm"
-            variant="outline"
-            class="rounded-full border-white bg-transparent text-white"
+          <Button size="sm" class="rounded-full border-white text-background"
             ><Linkedin class="h-4 w-4"
           /></Button>
-          <Button
-            size="sm"
-            variant="outline"
-            class="rounded-full border-white bg-transparent text-white"
+          <Button size="sm" class="rounded-full border-white text-background"
             ><Github class="h-4 w-4"
           /></Button>
-          <Button
-            size="sm"
-            variant="outline"
-            class="rounded-full border-white bg-transparent text-white"
+          <Button size="sm" class="rounded-full border-white text-background"
             ><Mail class="h-4 w-4"
           /></Button>
         </div>
@@ -166,11 +157,11 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 
 <style scoped>
 .glassy {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(12.4px);
   -webkit-backdrop-filter: blur(12.4px);
-  border: 1px solid rgba(255, 255, 255, 0.23);
+  border: 1px solid rgba(181, 176, 176, 0.25);
 }
 </style>
