@@ -48,7 +48,12 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
       <div class="grid h-full gap-3">
         <!-- WHAT I DO-->
         <div class="flex w-full flex-col gap-3 sm:flex-row lg:h-40">
-          <Card class="glassy flex flex-col justify-end gap-2.5">
+          <Card
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
+            class="glassy flex flex-col justify-end gap-2.5"
+          >
             <CardHeader>
               <MonitorSmartphone class="stroke-gold h-5 w-5" />
               <CardTitle class="text-gold">Web & Mobile App</CardTitle>
@@ -58,7 +63,12 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             </CardDescription>
           </Card>
 
-          <Card class="glassy flex flex-col justify-end gap-2.5">
+          <Card
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 200 } }"
+            class="glassy flex flex-col justify-end gap-2.5"
+          >
             <CardHeader>
               <Brush class="stroke-purple h-5 w-5" />
               <CardTitle class="text-purple">Design & Creative</CardTitle>
@@ -68,7 +78,12 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             </CardDescription>
           </Card>
 
-          <Card class="glassy flex flex-col justify-end gap-2.5">
+          <Card
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 300 } }"
+            class="glassy flex flex-col justify-end gap-2.5"
+          >
             <CardHeader>
               <Code class="stroke-turquoise h-5 w-5" />
               <CardTitle class="text-turquoise">Development</CardTitle>
@@ -80,7 +95,12 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
         </div>
 
         <div class="flex flex-col gap-3 sm:flex-row lg:h-56">
-          <Card class="glassy flex flex-col justify-end gap-2.5 sm:w-3/4">
+          <Card
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
+            class="glassy flex flex-col justify-end gap-2.5 sm:w-3/4"
+          >
             <CardHeader>
               <Projector class="stroke-turquoise h-5 w-5" />
               <CardTitle class="text-turquoise">Projects</CardTitle>
@@ -90,7 +110,12 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             </CardDescription>
           </Card>
 
-          <Card class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4">
+          <Card
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 600 } }"
+            class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4"
+          >
             <CardHeader>
               <Layers3 class="stroke-turquoise h-5 w-5" />
               <CardTitle class="text-turquoise">Tech Stack</CardTitle>
@@ -102,7 +127,12 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
         </div>
 
         <div class="flex flex-col gap-3 sm:flex-row lg:h-40">
-          <Card class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4">
+          <Card
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 250 } }"
+            class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4"
+          >
             <CardHeader>
               <ScrollText class="stroke-gold h-5 w-5" />
               <CardTitle class="text-gold">CV</CardTitle>
@@ -112,7 +142,12 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             </CardDescription>
           </Card>
 
-          <Card class="glassy sm:3/4 flex flex-col justify-end gap-2.5">
+          <Card
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 500 } }"
+            class="glassy sm:3/4 flex flex-col justify-end gap-2.5"
+          >
             <CardHeader>
               <Mails class="stroke-purple h-5 w-5" />
               <CardTitle class="text-purple">Contact</CardTitle>
@@ -125,12 +160,20 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 
         <div class="flex flex-col gap-3 sm:flex-row lg:hidden">
           <img
+            v-motion
+            :initial="{ opacity: 0, scale: 0.9 }"
+            :enter="{ opacity: 1, scale: 1, transition: { duration: 700, delay: 225 } }"
             src="../assets/img/friends.jpg"
             class="h-80 rounded-xl object-cover sm:w-1/2"
             alt="Profile Image"
           />
 
-          <Card class="glassy flex flex-col gap-2.5 sm:h-80 sm:w-1/2">
+          <Card
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
+            class="glassy flex flex-col gap-2.5 sm:h-80 sm:w-1/2"
+          >
             <CardHeader>
               <Mails class="stroke-purple h-5 w-5" />
               <CardTitle class="text-purple">About me</CardTitle>
@@ -146,6 +189,9 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 
       <div class="hidden w-2/5 gap-3 lg:grid">
         <img
+          v-motion
+          :initial="{ opacity: 0, scale: 0.9 }"
+          :enter="{ opacity: 1, scale: 1, transition: { duration: 700, delay: 400 } }"
           src="../assets/img/me.jpg"
           class="h-[568px] w-full rounded-xl object-cover"
           alt="Profile image"
