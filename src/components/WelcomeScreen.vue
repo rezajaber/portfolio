@@ -5,17 +5,18 @@ const greetings = [
   { text: 'Hello', lang: 'en' },
   { text: 'Bonjour', lang: 'fr' },
   { text: 'Hola', lang: 'es' },
+  { text: 'سلام', lang: 'fa' },
   { text: 'Ciao', lang: 'it' },
   { text: 'こんにちは', lang: 'ja' },
   { text: '你好', lang: 'zh' },
   { text: '안녕하세요', lang: 'ko' },
   { text: 'Guten Tag', lang: 'de' },
   { text: 'Olá', lang: 'pt' },
-  { text: 'नमस्ते', lang: 'hi' },
-  { text: 'سلام', lang: 'fa' } // Added Farsi greeting
+  { text: 'नमस्ते', lang: 'hi' }
 ]
 
 const currentGreeting = ref(greetings[0])
+const showWelcome = ref(true)
 let currentIndex = 0
 let intervalId: number | null = null
 
@@ -27,7 +28,15 @@ const changeGreeting = () => {
 const fontClass = computed(() => `font-${currentGreeting.value.lang}`)
 
 onMounted(() => {
-  intervalId = setInterval(changeGreeting, 175) // Change every 150ms
+  // Wait 1 second before starting the rotation
+  setTimeout(() => {
+    intervalId = setInterval(changeGreeting, 150)
+  }, 250)
+
+  // Set a timeout to hide the welcome screen after a certain duration
+  setTimeout(() => {
+    showWelcome.value = false
+  }, 10000) // Adjust this value to control how long the welcome screen is shown
 })
 
 onUnmounted(() => {
@@ -38,11 +47,13 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="welcome-screen flex items-center justify-center">
-    <h1 class="text-center text-3xl font-extralight text-white" :class="fontClass">
-      · {{ currentGreeting.text }}
-    </h1>
-  </div>
+  <Transition name="slide-up">
+    <div v-if="showWelcome" class="welcome-screen flex items-center justify-center">
+      <h1 class="text-center text-3xl font-extralight text-white" :class="fontClass">
+        · {{ currentGreeting.text }}
+      </h1>
+    </div>
+  </Transition>
 </template>
 
 <style scoped>
@@ -56,9 +67,10 @@ onUnmounted(() => {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 9999;
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.25s ease-in-out;
 }
 
+/* Font classes remain the same */
 .font-en {
   font-family: 'Roboto', sans-serif;
 }
@@ -102,14 +114,12 @@ onUnmounted(() => {
   }
 }
 
-@keyframes scaleUp {
-  from {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+.slide-up-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-up-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 </style>
