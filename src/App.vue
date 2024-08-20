@@ -3,13 +3,12 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="dark relative min-h-screen overflow-hidden bg-background">
-    <!-- Background elements with 4 smaller orbs -->
+  <div class="dark relative min-h-screen overflow-hidden bg-background px-10">
+    <!-- Background elements -->
     <div class="absolute inset-0">
-      <div class="glow-orb glow-purple-strong"></div>
-      <div class="glow-orb glow-gold-soft"></div>
-      <div class="glow-orb glow-turquoise-medium"></div>
-      <div class="glow-orb glow-coral-bright"></div>
+      <div class="glow-orb glow-purple"></div>
+      <div class="glow-orb glow-gold"></div>
+      <div class="glow-orb glow-turquoise"></div>
     </div>
 
     <!-- Main content -->
@@ -23,43 +22,32 @@ import { RouterView } from 'vue-router'
 .glow-orb {
   position: absolute;
   border-radius: 50%;
-  mix-blend-mode: screen;
+  filter: blur(80px);
+  opacity: 0.5;
 }
 
-.glow-purple-strong {
-  top: -5%;
-  right: -2%;
+.glow-purple {
+  top: -100px;
+  right: -100px;
   width: 300px;
   height: 300px;
   background-color: rgba(128, 0, 128, 0.5);
-  filter: blur(80px);
 }
 
-.glow-gold-soft {
-  bottom: -7%;
-  left: -5%;
-  width: 250px;
-  height: 250px;
-  background-color: rgba(255, 215, 0, 0.3);
-  filter: blur(70px);
-}
-
-.glow-turquoise-medium {
-  top: 60%;
-  left: 70%;
+.glow-gold {
+  bottom: -50px;
+  left: -50px;
   width: 200px;
   height: 200px;
-  background-color: rgba(64, 224, 208, 0.4);
-  filter: blur(60px);
+  background-color: rgba(255, 215, 0, 0.5);
 }
 
-.glow-coral-bright {
-  top: 15%;
-  left: 20%;
-  width: 180px;
-  height: 180px;
-  background-color: rgba(255, 127, 80, 0.4);
-  filter: blur(50px);
+.glow-turquoise {
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  background-color: rgba(64, 224, 208, 0.5);
 }
 
 /* Global styles for glassy effect */
