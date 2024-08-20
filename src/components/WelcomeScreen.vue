@@ -5,18 +5,17 @@ const greetings = [
   { text: 'Hello', lang: 'en' },
   { text: 'Bonjour', lang: 'fr' },
   { text: 'Hola', lang: 'es' },
-  { text: 'سلام', lang: 'fa' },
   { text: 'Ciao', lang: 'it' },
   { text: 'こんにちは', lang: 'ja' },
   { text: '你好', lang: 'zh' },
   { text: '안녕하세요', lang: 'ko' },
   { text: 'Guten Tag', lang: 'de' },
   { text: 'Olá', lang: 'pt' },
-  { text: 'नमस्ते', lang: 'hi' }
+  { text: 'नमस्ते', lang: 'hi' },
+  { text: 'سلام', lang: 'fa' }
 ]
 
 const currentGreeting = ref(greetings[0])
-const showWelcome = ref(true)
 let currentIndex = 0
 let intervalId: number | null = null
 
@@ -30,13 +29,8 @@ const fontClass = computed(() => `font-${currentGreeting.value.lang}`)
 onMounted(() => {
   // Wait 1 second before starting the rotation
   setTimeout(() => {
-    intervalId = setInterval(changeGreeting, 150)
+    intervalId = setInterval(changeGreeting, 175)
   }, 250)
-
-  // Set a timeout to hide the welcome screen after a certain duration
-  setTimeout(() => {
-    showWelcome.value = false
-  }, 10000) // Adjust this value to control how long the welcome screen is shown
 })
 
 onUnmounted(() => {
@@ -47,13 +41,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <Transition name="slide-up">
-    <div v-if="showWelcome" class="welcome-screen flex items-center justify-center">
-      <h1 class="text-center text-3xl font-extralight text-white" :class="fontClass">
-        · {{ currentGreeting.text }}
-      </h1>
-    </div>
-  </Transition>
+  <div class="welcome-screen flex items-center justify-center">
+    <h1 class="text-center text-3xl font-extralight text-white" :class="fontClass">
+      · {{ currentGreeting.text }}
+    </h1>
+  </div>
 </template>
 
 <style scoped>
@@ -65,9 +57,8 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #0f1010; /* Fully opaque black */
   z-index: 9999;
-  animation: fadeIn 0.25s ease-in-out;
 }
 
 /* Font classes remain the same */
@@ -103,23 +94,5 @@ onUnmounted(() => {
 }
 .font-fa {
   font-family: 'Vazirmatn', sans-serif;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.slide-up-leave-active {
-  transition: all 0.3s ease-out;
-}
-
-.slide-up-leave-to {
-  transform: translateY(-100%);
-  opacity: 0;
 }
 </style>
