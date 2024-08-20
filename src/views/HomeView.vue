@@ -21,7 +21,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
     <!-- MAIN PAGE -->
     <div class="flex w-full justify-between">
       <div class="hidden text-white lg:block">
-        <p class="text-lg">Reza Jaber</p>
+        <p class="text-xl">Reza Jaber</p>
         <p class="text-xs">Frontend-Developer based in Hamburg, Germany</p>
       </div>
 
@@ -56,7 +56,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
     <div class="flex flex-col items-center gap-4 lg:flex-row">
       <div class="grid h-full gap-3">
         <!-- WHAT I DO-->
-        <div class="flex w-full flex-col gap-3 sm:flex-row">
+        <div class="flex w-full flex-col gap-3 sm:flex-row lg:h-40">
           <Card class="glassy flex flex-col justify-end gap-2.5">
             <CardHeader>
               <MonitorSmartphone class="stroke-gold h-5 w-5" />
@@ -88,7 +88,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
           </Card>
         </div>
 
-        <div class="flex flex-col gap-3 sm:flex-row">
+        <div class="flex flex-col gap-3 sm:flex-row lg:h-56">
           <Card class="glassy flex flex-col justify-end gap-2.5 sm:w-3/4">
             <CardHeader>
               <Projector class="stroke-turquoise h-5 w-5" />
@@ -110,7 +110,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
           </Card>
         </div>
 
-        <div class="flex flex-col gap-3 sm:flex-row">
+        <div class="flex flex-col gap-3 sm:flex-row lg:h-40">
           <Card class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4">
             <CardHeader>
               <ScrollText class="stroke-gold h-5 w-5" />
@@ -156,21 +156,9 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
       <div class="hidden w-2/5 gap-3 lg:grid">
         <img
           src="../assets/img/me.jpg"
-          class="h-full w-full rounded-xl object-cover"
+          class="h-[568px] w-full rounded-xl object-cover"
           alt="Profile image"
         />
-
-        <Card class="glassy flex flex-col gap-2.5">
-          <CardHeader>
-            <Mails class="stroke-purple h-5 w-5" />
-            <CardTitle class="text-purple">About me</CardTitle>
-          </CardHeader>
-          <CardDescription class="w-72 text-xs">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga deleniti vel sint dolores
-            quos accusamus, sed harum reprehenderit. Iure aspernatur molestias, et voluptas unde vel
-            nulla suscipit eos at adipisci? Lorem ipsum dolor sit amet
-          </CardDescription>
-        </Card>
       </div>
     </div>
   </div>
