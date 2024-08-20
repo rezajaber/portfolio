@@ -12,7 +12,7 @@ import { RouterView } from 'vue-router'
     </div>
 
     <!-- Main content -->
-    <div class="relative z-10 mx-auto flex min-h-screen max-w-[1440px] items-center justify-center">
+    <div class="relative z-10 mx-auto flex min-h-screen max-w-[1280px] items-center justify-center">
       <RouterView />
     </div>
   </div>

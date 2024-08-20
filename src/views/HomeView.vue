@@ -54,11 +54,11 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
     </div>
 
     <div class="flex flex-col items-center gap-4 lg:flex-row">
-      <div class="grid gap-3">
+      <div class="grid h-full gap-3">
         <!-- WHAT I DO-->
         <div class="flex w-full flex-col gap-3 sm:flex-row">
           <Card class="glassy flex flex-col justify-end gap-2.5">
-            <CardHeader class="">
+            <CardHeader>
               <MonitorSmartphone class="stroke-gold h-5 w-5" />
               <CardTitle class="text-gold">Web & Mobile App</CardTitle>
             </CardHeader>
@@ -112,7 +112,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 
         <div class="flex flex-col gap-3 sm:flex-row">
           <Card class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4">
-            <CardHeader class="">
+            <CardHeader>
               <ScrollText class="stroke-gold h-5 w-5" />
               <CardTitle class="text-gold">CV</CardTitle>
             </CardHeader>
@@ -122,7 +122,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
           </Card>
 
           <Card class="glassy sm:3/4 flex flex-col justify-end gap-2.5">
-            <CardHeader class="">
+            <CardHeader>
               <Mails class="stroke-purple h-5 w-5" />
               <CardTitle class="text-purple">Contact</CardTitle>
             </CardHeader>
@@ -139,8 +139,8 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             alt="Profile Image"
           />
 
-          <Card class="glassy gap-2.5 sm:h-80 sm:w-1/2">
-            <CardHeader class="">
+          <Card class="glassy flex flex-col gap-2.5 sm:h-80 sm:w-1/2">
+            <CardHeader>
               <Mails class="stroke-purple h-5 w-5" />
               <CardTitle class="text-purple">About me</CardTitle>
             </CardHeader>
@@ -153,12 +153,24 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
         </div>
       </div>
 
-      <div class="hidden w-2/5 lg:flex">
+      <div class="hidden w-2/5 gap-3 lg:grid">
         <img
           src="../assets/img/me.jpg"
           class="h-full w-full rounded-xl object-cover"
           alt="Profile image"
         />
+
+        <Card class="glassy flex flex-col gap-2.5">
+          <CardHeader>
+            <Mails class="stroke-purple h-5 w-5" />
+            <CardTitle class="text-purple">About me</CardTitle>
+          </CardHeader>
+          <CardDescription class="w-72 text-xs">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga deleniti vel sint dolores
+            quos accusamus, sed harum reprehenderit. Iure aspernatur molestias, et voluptas unde vel
+            nulla suscipit eos at adipisci? Lorem ipsum dolor sit amet
+          </CardDescription>
+        </Card>
       </div>
     </div>
   </div>
