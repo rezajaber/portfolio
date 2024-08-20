@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="dark relative min-h-screen overflow-hidden bg-background px-10">
+  <div class="dark relative min-h-screen overflow-hidden bg-background p-6">
     <!-- Background elements -->
     <div class="absolute inset-0">
       <div class="glow-orb glow-purple"></div>
@@ -12,7 +12,7 @@ import { RouterView } from 'vue-router'
     </div>
 
     <!-- Main content -->
-    <div class="relative z-10 flex min-h-screen items-center justify-center">
+    <div class="relative z-10 mx-auto flex min-h-screen max-w-[1440px] items-center justify-center">
       <RouterView />
     </div>
   </div>

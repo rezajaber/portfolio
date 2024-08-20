@@ -2,6 +2,7 @@
 import {
   Linkedin,
   Github,
+  Mail,
   Mails,
   MonitorSmartphone,
   Code,
@@ -12,39 +13,50 @@ import {
 } from 'lucide-vue-next'
 
 import Button from '@/components/ui/button/Button.vue'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 </script>
 
 <template>
   <div class="grid gap-4">
     <!-- MAIN PAGE -->
-    <div class="flex items-center justify-between">
-      <div class="text-white">
-        <p class="text-2xl">Reza Jaber</p>
+    <div class="flex w-full justify-between">
+      <div class="hidden text-white lg:block">
+        <p class="text-lg">Reza Jaber</p>
         <p class="text-xs">Frontend-Developer based in Hamburg, Germany</p>
       </div>
 
-      <div class="flex gap-2.5">
-        <Button variant="link">English</Button>
-        <Button variant="outline" class="rounded-full border-white bg-transparent text-white"
-          >Contact</Button
-        >
-        <Button variant="outline" class="rounded-full border-white bg-transparent text-white"
-          ><Linkedin class="h-4 w-4"
-        /></Button>
-        <Button variant="outline" class="rounded-full border-white bg-transparent text-white"
-          ><Github class="h-4 w-4"
-        /></Button>
-        <Button variant="outline" class="rounded-full border-white bg-transparent text-white"
-          ><Mail class="h-4 w-4"
-        /></Button>
+      <div class="flex w-full items-center justify-between lg:w-fit">
+        <Button size="sm" class="text-lg lg:hidden" variant="link">Reza Jaber</Button>
+
+        <div class="justify-bewtween flex gap-2.5">
+          <Button size="sm" class="hidden lg:block" variant="link">English</Button>
+
+          <Button
+            size="sm"
+            variant="outline"
+            class="rounded-full border-white bg-transparent text-white"
+            ><Linkedin class="h-4 w-4"
+          /></Button>
+          <Button
+            size="sm"
+            variant="outline"
+            class="rounded-full border-white bg-transparent text-white"
+            ><Github class="h-4 w-4"
+          /></Button>
+          <Button
+            size="sm"
+            variant="outline"
+            class="rounded-full border-white bg-transparent text-white"
+            ><Mail class="h-4 w-4"
+          /></Button>
+        </div>
       </div>
     </div>
 
-    <div class="flex gap-4">
-      <div class="flex flex-col gap-3">
+    <div class="flex flex-col items-center gap-4 lg:flex-row">
+      <div class="grid gap-3">
         <!-- WHAT I DO-->
-        <div class="flex h-40 gap-3">
+        <div class="flex w-full flex-col gap-3 sm:flex-row">
           <Card class="glassy flex flex-col justify-end gap-2.5">
             <CardHeader class="">
               <MonitorSmartphone class="stroke-gold h-5 w-5" />
@@ -76,8 +88,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
           </Card>
         </div>
 
-        <div class="flex h-56 gap-3">
-          <Card class="glassy flex w-3/4 flex-col justify-end gap-2.5">
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <Card class="glassy flex flex-col justify-end gap-2.5 sm:w-3/4">
             <CardHeader>
               <Projector class="stroke-turquoise h-5 w-5" />
               <CardTitle class="text-turquoise">Projects</CardTitle>
@@ -87,7 +99,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
             </CardDescription>
           </Card>
 
-          <Card class="glassy flex w-1/4 flex-col justify-end gap-2.5">
+          <Card class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4">
             <CardHeader>
               <Layers3 class="stroke-turquoise h-5 w-5" />
               <CardTitle class="text-turquoise">Tech Stack</CardTitle>
@@ -98,8 +110,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
           </Card>
         </div>
 
-        <div class="flex h-40 gap-3">
-          <Card class="glassy flex w-1/4 flex-col justify-end gap-2.5">
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <Card class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4">
             <CardHeader class="">
               <ScrollText class="stroke-gold h-5 w-5" />
               <CardTitle class="text-gold">CV</CardTitle>
@@ -109,9 +121,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
             </CardDescription>
           </Card>
 
-          <Card class="glassy flex w-3/4 flex-col justify-end gap-2.5">
+          <Card class="glassy sm:3/4 flex flex-col justify-end gap-2.5">
             <CardHeader class="">
-              <Mail class="stroke-purple h-5 w-5" />
+              <Mails class="stroke-purple h-5 w-5" />
               <CardTitle class="text-purple">Contact</CardTitle>
             </CardHeader>
             <CardDescription class="w-72 text-xs">
@@ -119,11 +131,31 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
             </CardDescription>
           </Card>
         </div>
+
+        <div class="flex flex-col gap-3 sm:flex-row lg:hidden">
+          <img
+            src="../assets/img/friends.jpg"
+            class="h-80 rounded-xl object-cover sm:w-1/2"
+            alt="Profile Image"
+          />
+
+          <Card class="glassy gap-2.5 sm:h-80 sm:w-1/2">
+            <CardHeader class="">
+              <Mails class="stroke-purple h-5 w-5" />
+              <CardTitle class="text-purple">About me</CardTitle>
+            </CardHeader>
+            <CardDescription class="w-72 text-xs">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga deleniti vel sint
+              dolores quos accusamus, sed harum reprehenderit. Iure aspernatur molestias, et
+              voluptas unde vel nulla suscipit eos at adipisci? Lorem ipsum dolor sit amet
+            </CardDescription>
+          </Card>
+        </div>
       </div>
 
-      <div class="w-2/5">
+      <div class="hidden w-2/5 lg:flex">
         <img
-          src="../assets/img/test.jpg"
+          src="../assets/img/me.jpg"
           class="h-full w-full rounded-xl object-cover"
           alt="Profile image"
         />
@@ -134,8 +166,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
 <style scoped>
 .glassy {
-  /* From https://css.glass */
-  /* From https://css.glass */
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
