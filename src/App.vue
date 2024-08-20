@@ -67,7 +67,7 @@ onMounted(() => {
   position: absolute;
   border-radius: 50%;
   filter: blur(55px);
-  opacity: 0.55;
+  opacity: 0.4;
 }
 
 .shape-1 {
