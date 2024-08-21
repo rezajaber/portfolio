@@ -13,7 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="dark relative min-h-screen overflow-hidden bg-background p-6 lg:p-0 lg:px-6">
+  <div class="dark relative overflow-hidden bg-background p-6 lg:p-0 lg:px-6">
     <!-- Background elements -->
     <div class="absolute inset-0">
       <!-- New fluid shapes -->

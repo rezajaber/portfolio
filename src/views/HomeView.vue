@@ -89,24 +89,29 @@ const toggleLanguage = () => {
           :enter="{ opacity: 1, x: 0, transition: { duration: 700, delay: 750 } }"
           class="justify-bewtween flex gap-2.5"
         >
-          <Button @click="toggleLanguage" size="sm" class="hidden lg:block" variant="link">
+          <Button
+            @click="toggleLanguage"
+            size="sm"
+            variant="outline"
+            class="rounded-full border-gray-600 px-2 hover:bg-white"
+          >
             {{ t('languageButton') }}
           </Button>
 
           <a href="https://www.linkedin.com/in/rezajaber/" target="_blank">
-            <Button size="sm" class="rounded-full border-white text-background">
+            <Button size="sm" class="rounded-full text-background">
               <Linkedin class="h-4 w-4" />
             </Button>
           </a>
 
           <a href="https://github.com/rezajaber" target="_blank">
-            <Button size="sm" class="rounded-full border-white text-background">
+            <Button size="sm" class="rounded-full text-background">
               <Github class="h-4 w-4" />
             </Button>
           </a>
 
           <a href="mailto:amirrezajaber@gmail.com" target="_blank">
-            <Button size="sm" class="rounded-full border-white text-background">
+            <Button size="sm" class="rounded-full text-background">
               <Mail class="h-4 w-4" />
             </Button>
           </a>
@@ -116,8 +121,49 @@ const toggleLanguage = () => {
 
     <div class="flex flex-col items-center gap-4 lg:flex-row">
       <div class="grid h-full gap-3">
+        <div class="flex flex-col gap-3 sm:flex-row lg:hidden">
+          <img
+            v-motion
+            :initial="{ opacity: 0, scale: 0.9 }"
+            :enter="{ opacity: 1, scale: 1, transition: { duration: 700, delay: 225 } }"
+            src="../assets/img/friends.jpg"
+            class="h-80 rounded-xl object-cover sm:w-1/2"
+            alt="Profile Image"
+          />
+
+          <Card
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
+            class="glassy flex flex-col gap-2 sm:h-80 sm:w-1/2"
+          >
+            <CardHeader>
+              <CircleUser class="card-icon h-5 w-5 stroke-purple" />
+              <CardTitle class="text-purple">{{ t('aboutMe.title') }}</CardTitle>
+            </CardHeader>
+            <CardDescription class="no-scrollbar overflow-y-scroll text-xs leading-5">
+              <div class="grid text-xs leading-relaxed">
+                <span class="mb-2">{{ t('aboutMe.greeting') }}</span>
+
+                <span class="mb-2">{{ t('aboutMe.intro') }}</span>
+
+                <span class="mb-2">{{ t('aboutMe.passion') }}</span>
+
+                <span class="mb-2">
+                  {{ t('aboutMe.hobbies') }}
+                  <br />
+                  <br />
+                  {{ t('aboutMe.future') }}
+                </span>
+              </div>
+            </CardDescription>
+          </Card>
+        </div>
+
         <!-- WAS ICH MACHE -->
         <div class="flex w-full flex-col gap-3 sm:flex-row lg:h-40">
+          <h3 class="-mb-2 text-center text-lg font-medium text-white sm:hidden">MY SKILLS</h3>
+
           <Card
             v-motion
             :initial="{ opacity: 0, y: 100 }"
@@ -152,7 +198,7 @@ const toggleLanguage = () => {
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 300 } }"
-            class="glassy flex flex-col justify-between gap-2 lg:justify-end"
+            class="glassy flex flex-col justify-start gap-2"
           >
             <CardHeader>
               <Code class="card-icon h-5 w-5 stroke-turquoise" />
@@ -208,7 +254,7 @@ const toggleLanguage = () => {
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 250 } }"
-            class="glassy relative flex cursor-pointer flex-col justify-between gap-2 sm:w-1/4"
+            class="glassy relative flex cursor-pointer flex-col justify-start gap-2 sm:w-1/4"
             @click="toggleCV"
           >
             <CardHeader>
@@ -228,7 +274,7 @@ const toggleLanguage = () => {
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 500 } }"
-            class="glassy flex justify-between gap-2.5 sm:w-3/4 lg:justify-end"
+            class="glassy flex flex-col justify-between gap-2.5 sm:w-3/4 sm:flex-row lg:justify-end"
           >
             <div class="grid gap-2.5">
               <CardHeader>
@@ -240,7 +286,7 @@ const toggleLanguage = () => {
               </CardDescription>
             </div>
 
-            <div class="grid place-items-end gap-2.5">
+            <div class="flex place-items-end gap-2.5 sm:grid">
               <a href="mailto:amirrezajaber@gmail.com" target="_blank">
                 <Button size="sm" class="rounded-full border-white text-background">
                   {{ t('contact.mailButton') }} <Mail class="ml-1.5 h-4 w-4" />
@@ -274,45 +320,6 @@ const toggleLanguage = () => {
           <div class="h-1/2 w-full max-w-[360px] rounded-xl px-6 sm:h-5/6 sm:max-w-4xl lg:px-0">
             <iframe src="/cv.pdf" class="h-full w-full rounded-lg" title="CV PDF"></iframe>
           </div>
-        </div>
-
-        <div class="flex flex-col gap-3 sm:flex-row lg:hidden">
-          <img
-            v-motion
-            :initial="{ opacity: 0, scale: 0.9 }"
-            :enter="{ opacity: 1, scale: 1, transition: { duration: 700, delay: 225 } }"
-            src="../assets/img/friends.jpg"
-            class="h-80 rounded-xl object-cover sm:w-1/2"
-            alt="Profile Image"
-          />
-
-          <Card
-            v-motion
-            :initial="{ opacity: 0, y: 100 }"
-            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
-            class="glassy flex flex-col gap-2 sm:h-80 sm:w-1/2"
-          >
-            <CardHeader>
-              <CircleUser class="card-icon h-5 w-5 stroke-purple" />
-              <CardTitle class="text-purple">{{ t('aboutMe.title') }}</CardTitle>
-            </CardHeader>
-            <CardDescription class="no-scrollbar overflow-y-scroll text-xs leading-5">
-              <div class="grid text-xs leading-relaxed">
-                <span class="mb-2">{{ t('aboutMe.greeting') }}</span>
-
-                <span class="mb-2">{{ t('aboutMe.intro') }}</span>
-
-                <span class="mb-2">{{ t('aboutMe.passion') }}</span>
-
-                <span class="mb-2">
-                  {{ t('aboutMe.hobbies') }}
-                  <br />
-                  <br />
-                  {{ t('aboutMe.future') }}
-                </span>
-              </div>
-            </CardDescription>
-          </Card>
         </div>
       </div>
 
