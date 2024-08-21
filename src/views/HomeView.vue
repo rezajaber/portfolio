@@ -62,18 +62,33 @@ const toggleLanguage = () => {
   <div class="grid gap-4">
     <!-- MAIN PAGE -->
     <div class="flex w-full justify-between">
-      <div class="hidden text-white lg:block">
+      <div
+        v-motion
+        :initial="{ opacity: 0, x: -100 }"
+        :enter="{ opacity: 1, x: 0, transition: { duration: 700, delay: 500 } }"
+        class="hidden text-white lg:block"
+      >
         <p class="text-xl">{{ t('name') }}</p>
         <p class="text-xs">{{ t('jobTitle') }}</p>
       </div>
 
       <div class="flex w-full items-center justify-between lg:w-fit">
-        <div class="text-white lg:hidden">
+        <div
+          v-motion
+          :initial="{ opacity: 0, x: -100 }"
+          :enter="{ opacity: 1, x: 0, transition: { duration: 700, delay: 500 } }"
+          class="text-white lg:hidden"
+        >
           <p class="text-xl">{{ t('name') }}</p>
           <p class="text-xs">{{ t('jobTitleShort') }}</p>
         </div>
 
-        <div class="justify-bewtween flex gap-2.5">
+        <div
+          v-motion
+          :initial="{ opacity: 0, x: 100 }"
+          :enter="{ opacity: 1, x: 0, transition: { duration: 700, delay: 750 } }"
+          class="justify-bewtween flex gap-2.5"
+        >
           <Button @click="toggleLanguage" size="sm" class="hidden lg:block" variant="link">
             {{ t('languageButton') }}
           </Button>
