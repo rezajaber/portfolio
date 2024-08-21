@@ -10,12 +10,16 @@ import {
   ScrollText,
   Layers3,
   Projector,
-  MousePointer2
+  MousePointer2,
+  CircleUser
 } from 'lucide-vue-next'
 
 import Button from '@/components/ui/button/Button.vue'
 import Badge from '@/components/ui/badge/Badge.vue'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { ref } from 'vue'
+
+const isHovered = ref(false)
 </script>
 
 <template>
@@ -28,20 +32,28 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
       </div>
 
       <div class="flex w-full items-center justify-between lg:w-fit">
-        <Button size="sm" class="text-lg lg:hidden" variant="link">Reza Jaber</Button>
+        <div class="text-white">
+          <p class="text-xl">Reza Jaber</p>
+          <p class="text-xs">Frontend-Entwickler | Hamburg</p>
+        </div>
 
         <div class="justify-bewtween flex gap-2.5">
           <Button size="sm" class="hidden lg:block" variant="link">English</Button>
 
-          <Button size="sm" class="rounded-full border-white text-background"
-            ><Linkedin class="h-4 w-4"
-          /></Button>
-          <Button size="sm" class="rounded-full border-white text-background"
-            ><Github class="h-4 w-4"
-          /></Button>
-          <Button size="sm" class="rounded-full border-white text-background"
-            ><Mail class="h-4 w-4"
-          /></Button>
+          <a href="https://www.linkedin.com/in/rezajaber/" target="_blank">
+            <Button size="sm" class="rounded-full border-white text-background"
+              ><Linkedin class="h-4 w-4" /></Button
+          ></a>
+
+          <a href="https://github.com/rezajaber" target="_blank">
+            <Button size="sm" class="rounded-full border-white text-background"
+              ><Github class="h-4 w-4" /></Button
+          ></a>
+
+          <a href="mailto:amirrezajaber@gmail.com" target="_blank">
+            <Button size="sm" class="rounded-full border-white text-background"
+              ><Mail class="h-4 w-4" /></Button
+          ></a>
         </div>
       </div>
     </div>
@@ -111,7 +123,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
               <Projector class="card-icon h-5 w-5 stroke-turquoise" />
               <CardTitle class="text-turquoise">Projekte</CardTitle>
             </CardHeader>
-            <CardDescription class="w-3/4 text-xs leading-[18px]">
+            <CardDescription class="text-xs leading-[18px] md:w-3/4">
               Von persönlichen Nebenprojekten bis hin zu maßgeschneiderten Kundenlösungen - jedes
               Projekt ist eine Gelegenheit, Kreativität mit Funktionalität zu verbinden und
               innovative Ideen zum Leben zu erwecken.
@@ -140,7 +152,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
         </div>
 
         <!-- CV & CONTACT -->
-        <div class="mb-3.5 flex flex-col gap-5 sm:flex-row lg:mb-0 lg:h-40">
+        <div class="mb-3.5 flex flex-col gap-5 sm:flex-row lg:mb-0 lg:h-44">
           <Card
             v-motion
             :initial="{ opacity: 0, y: 100 }"
@@ -164,13 +176,13 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 500 } }"
-            class="glassy sm:3/4 flex flex-col justify-between gap-2.5 lg:justify-end"
+            class="glassy flex flex-col justify-between gap-2.5 sm:w-3/4 lg:justify-end"
           >
             <CardHeader>
               <Mails class="card-icon h-5 w-5 stroke-purple" />
               <CardTitle class="text-purple">Kontakt</CardTitle>
             </CardHeader>
-            <CardDescription class="w-3/4 text-xs leading-[18px]">
+            <CardDescription class="text-xs leading-[18px] md:w-3/4">
               Erwecke deine Vision mit neuester Technologie und aktuellen Design-Trends zum Leben.
               Nutze einfach das Kontaktformular, um mich zu erreichen - ich freue mich darauf, dir
               bei deinem Projekt zu helfen und es gemeinsam zum Erfolg zu führen.
@@ -199,27 +211,67 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col gap-2 sm:h-80 sm:w-1/2"
           >
             <CardHeader>
-              <Mails class="card-icon h-5 w-5 stroke-purple" />
+              <CircleUser class="card-icon h-5 w-5 stroke-purple" />
               <CardTitle class="text-purple">About me</CardTitle>
             </CardHeader>
-            <CardDescription class="text-xs leading-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga deleniti vel sint
-              dolores quos accusamus, sed harum reprehenderit. Iure aspernatur molestias, et
-              voluptas unde vel nulla suscipit eos at adipisci? Lorem ipsum dolor sit amet
+            <CardDescription class="no-scrollbar overflow-y-scroll text-xs leading-5">
+              <p class="text-xs leading-relaxed">
+                Hallo! Ich bin <strong>Reza Jaber</strong>, ein
+                <strong>22-jähriger Softwareentwickler</strong> aus der Weltstadt
+                <strong>Hamburg, Deutschland</strong>. Meine Leidenschaft liegt in der
+                <strong>Webentwicklung</strong>, in der ich meine Fähigkeiten seit
+                <strong>zwei Jahren</strong> verfeinere. Wenn ich nicht gerade für meinen Hauptjob
+                Code schreibe, findest du mich bei spannenden <strong>Nebenprojekten</strong>. Ich
+                liebe <strong>Herausforderungen</strong> und es begeistert mich,
+                <strong>Ideen in Produkte</strong> umzusetzen. Es geht nicht nur darum, Code zu
+                schreiben; es geht darum, Visionen zum Leben zu erwecken! Außerhalb der Codingwelt
+                bin ich ein großer Fan von <strong>Musik</strong> und <strong>Sport</strong>.
+                Kürzlich habe ich mit dem Reisen angefangen! Mein nächstes großes Abenteuer? Ich
+                reise in den kommenden Monaten nach <strong>Spanien und Japan</strong>. Ich kann es
+                kaum erwarten, Vielleicht starte ich hier sogar einen kleinen Blog!
+              </p>
             </CardDescription>
           </Card>
         </div>
       </div>
 
-      <div class="hidden w-1/2 gap-3 lg:grid">
-        <img
-          v-motion
-          :initial="{ opacity: 0, scale: 0.9 }"
-          :enter="{ opacity: 1, scale: 1, transition: { duration: 700, delay: 400 } }"
-          src="../assets/img/me.jpg"
-          class="h-[568px] w-full rounded-xl object-cover"
-          alt="Profile image"
-        />
+      <div class="relative hidden w-1/2 gap-3 lg:grid">
+        <div class="relative" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+          <img
+            v-motion
+            :initial="{ opacity: 0, scale: 0.9 }"
+            :enter="{ opacity: 1, scale: 1, transition: { duration: 700, delay: 400 } }"
+            src="../assets/img/me.jpg"
+            :class="[
+              'h-[568px] w-full rounded-xl object-cover transition-all duration-300',
+              { 'brightness-50': isHovered }
+            ]"
+            alt="Profile image"
+          />
+          <div
+            v-if="isHovered"
+            class="absolute inset-0 flex items-center justify-center p-6 text-white"
+          >
+            <p class="text-sm leading-relaxed">
+              Hallo! Ich bin <strong>Reza Jaber</strong>, ein
+              <strong>22-jähriger Softwareentwickler</strong> aus der Weltstadt
+              <strong>Hamburg, Deutschland</strong>. Meine Leidenschaft liegt in der
+              <strong>Webentwicklung</strong>, in der ich meine Fähigkeiten seit
+              <strong>zwei Jahren</strong> verfeinere. Wenn ich nicht gerade für meinen Hauptjob
+              Code schreibe, findest du mich bei spannenden <strong>Nebenprojekten</strong>. Ich
+              liebe <strong>Herausforderungen</strong> und es begeistert mich,
+              <strong>Ideen in Produkte</strong> umzusetzen. Es geht nicht nur darum, Code zu
+              schreiben; es geht darum, Visionen zum Leben zu erwecken! Außerhalb der Codingwelt bin
+              ich ein großer Fan von <strong>Musik</strong> und <strong>Sport</strong>. Kürzlich
+              habe ich mit dem Reisen angefangen! Mein nächstes großes Abenteuer? Ich reise in den
+              kommenden Monaten nach <strong>Spanien und Japan</strong>. Ich kann es kaum erwarten,
+              Vielleicht starte ich hier sogar einen kleinen Blog!
+            </p>
+          </div>
+          <div class="absolute -bottom-3 flex w-full justify-center">
+            <Badge>Über mich</Badge>
+          </div>
+        </div>
       </div>
     </div>
   </div>
