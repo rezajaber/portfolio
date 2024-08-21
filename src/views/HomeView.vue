@@ -79,19 +79,22 @@ const toggleLanguage = () => {
           </Button>
 
           <a href="https://www.linkedin.com/in/rezajaber/" target="_blank">
-            <Button size="sm" class="rounded-full border-white text-background"
-              ><Linkedin class="h-4 w-4" /></Button
-          ></a>
+            <Button size="sm" class="rounded-full border-white text-background">
+              <Linkedin class="h-4 w-4" />
+            </Button>
+          </a>
 
           <a href="https://github.com/rezajaber" target="_blank">
-            <Button size="sm" class="rounded-full border-white text-background"
-              ><Github class="h-4 w-4" /></Button
-          ></a>
+            <Button size="sm" class="rounded-full border-white text-background">
+              <Github class="h-4 w-4" />
+            </Button>
+          </a>
 
           <a href="mailto:amirrezajaber@gmail.com" target="_blank">
-            <Button size="sm" class="rounded-full border-white text-background"
-              ><Mail class="h-4 w-4" /></Button
-          ></a>
+            <Button size="sm" class="rounded-full border-white text-background">
+              <Mail class="h-4 w-4" />
+            </Button>
+          </a>
         </div>
       </div>
     </div>
@@ -108,11 +111,10 @@ const toggleLanguage = () => {
           >
             <CardHeader>
               <Brush class="card-icon h-5 w-5 stroke-purple" />
-              <CardTitle class="text-purple">UI & UX Design</CardTitle>
+              <CardTitle class="text-purple">{{ t('uiUxDesign.title') }}</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs leading-[18px]">
-              Gestaltung intuitiver Benutzeroberflächen. Optimierung der User Experience durch
-              klares Design.
+              {{ t('uiUxDesign.description') }}
             </CardDescription>
           </Card>
 
@@ -124,11 +126,10 @@ const toggleLanguage = () => {
           >
             <CardHeader>
               <MonitorSmartphone class="card-icon h-5 w-5 stroke-gold" />
-              <CardTitle class="text-gold">Web & Mobile App</CardTitle>
+              <CardTitle class="text-gold">{{ t('webMobileApp.title') }}</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs leading-[18px]">
-              Entwicklung skalierbarer Web- und Mobile-Apps. Ideen in funktionale Produkte
-              umwandeln.
+              {{ t('webMobileApp.description') }}
             </CardDescription>
           </Card>
 
@@ -140,11 +141,10 @@ const toggleLanguage = () => {
           >
             <CardHeader>
               <Code class="card-icon h-5 w-5 stroke-turquoise" />
-              <CardTitle class="text-turquoise">Entwicklung</CardTitle>
+              <CardTitle class="text-turquoise">{{ t('development.title') }}</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs leading-[18px]">
-              Erstellung von leistungsstarkem, sauberem und effizientem Code für Ihre
-              Projektvorstellungen .
+              {{ t('development.description') }}
             </CardDescription>
           </Card>
         </div>
@@ -159,17 +159,15 @@ const toggleLanguage = () => {
           >
             <CardHeader>
               <Projector class="card-icon h-5 w-5 stroke-turquoise" />
-              <CardTitle class="text-turquoise">Projekte</CardTitle>
+              <CardTitle class="text-turquoise">{{ t('projects.title') }}</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs leading-[18px] md:w-3/4">
-              Von persönlichen Nebenprojekten bis hin zu maßgeschneiderten Kundenlösungen - jedes
-              Projekt ist eine Gelegenheit, Kreativität mit Funktionalität zu verbinden und
-              innovative Ideen zum Leben zu erwecken.
+              {{ t('projects.description') }}
             </CardDescription>
 
             <div class="animated-cursor absolute right-10 top-20 flex">
               <MousePointer2 class="fill-turquoise" />
-              <Badge class="mt-5 w-fit bg-turquoise text-white">Projekte</Badge>
+              <Badge class="mt-5 w-fit bg-turquoise text-white">{{ t('projects.badge') }}</Badge>
             </div>
           </Card>
 
@@ -181,10 +179,10 @@ const toggleLanguage = () => {
           >
             <CardHeader>
               <Layers3 class="card-icon h-5 w-5 stroke-gold" />
-              <CardTitle class="text-gold">Tech Stack</CardTitle>
+              <CardTitle class="text-gold">{{ t('techStack.title') }}</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs">
-              Mein Go-To Techstack, womit ich meine, aber auch eure Projektwünsche umsetze.
+              {{ t('techStack.description') }}
             </CardDescription>
           </Card>
         </div>
@@ -200,14 +198,14 @@ const toggleLanguage = () => {
           >
             <CardHeader>
               <ScrollText class="card-icon h-5 w-5 stroke-gold" />
-              <CardTitle class="text-gold">Lebenslauf</CardTitle>
+              <CardTitle class="text-gold">{{ t('cv.title') }}</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs leading-[18px]">
-              Anbei findet ihr meinen Werdegang.
+              {{ t('cv.description') }}
             </CardDescription>
 
             <div class="absolute inset-x-0 -bottom-3 flex w-full justify-center">
-              <Badge class="w-fit justify-end border">Öffnen</Badge>
+              <Badge class="w-fit justify-end border">{{ t('cv.openButton') }}</Badge>
             </div>
           </Card>
 
@@ -220,25 +218,23 @@ const toggleLanguage = () => {
             <div class="grid gap-2.5">
               <CardHeader>
                 <Mails class="card-icon h-5 w-5 stroke-purple" />
-                <CardTitle class="text-purple">Kontakt</CardTitle>
+                <CardTitle class="text-purple">{{ t('contact.title') }}</CardTitle>
               </CardHeader>
               <CardDescription class="text-xs leading-[18px] md:w-3/4">
-                Erwecke deine Vision mit neuester Technologie und aktuellen Design-Trends zum Leben.
-                Nutze einfach das Kontaktformular, um mich zu erreichen - ich freue mich darauf, dir
-                bei deinem Projekt zu helfen und es gemeinsam zum Erfolg zu führen.
+                {{ t('contact.description') }}
               </CardDescription>
             </div>
 
             <div class="grid place-items-end gap-2.5">
               <a href="mailto:amirrezajaber@gmail.com" target="_blank">
                 <Button size="sm" class="rounded-full border-white text-background">
-                  Mail <Mail class="ml-1.5 h-4 w-4" />
+                  {{ t('contact.mailButton') }} <Mail class="ml-1.5 h-4 w-4" />
                 </Button>
               </a>
 
               <a href="https://github.com/rezajaber" target="_blank">
                 <Button size="sm" class="rounded-full border-white text-background">
-                  Github <Github class="ml-1.5 h-4 w-4" />
+                  {{ t('contact.githubButton') }} <Github class="ml-1.5 h-4 w-4" />
                 </Button>
               </a>
 
@@ -247,7 +243,7 @@ const toggleLanguage = () => {
                   size="sm"
                   class="flex items-center rounded-full border-white text-background"
                 >
-                  Linkedin <Linkedin class="ml-1.5 h-4 w-4" />
+                  {{ t('contact.linkedinButton') }} <Linkedin class="ml-1.5 h-4 w-4" />
                 </Button>
               </a>
             </div>
@@ -283,31 +279,21 @@ const toggleLanguage = () => {
           >
             <CardHeader>
               <CircleUser class="card-icon h-5 w-5 stroke-purple" />
-              <CardTitle class="text-purple">About me</CardTitle>
+              <CardTitle class="text-purple">{{ t('aboutMe.title') }}</CardTitle>
             </CardHeader>
             <CardDescription class="no-scrollbar overflow-y-scroll text-xs leading-5">
               <div class="grid text-xs leading-relaxed">
-                <span class="mb-2">Hey 👋</span>
+                <span class="mb-2">{{ t('aboutMe.greeting') }}</span>
+
+                <span class="mb-2">{{ t('aboutMe.intro') }}</span>
+
+                <span class="mb-2">{{ t('aboutMe.passion') }}</span>
 
                 <span class="mb-2">
-                  Ich bin <i>Reza Jaber</i>, 22 Jahre alt, <i>Softwareentwickler</i> aus
-                  <i>Hamburg</i> 🇩🇪. <br />Meine Leidenschaft: <i>Webentwicklung</i> 💻
-                </span>
-
-                <span class="mb-2">
-                  Neben meinem Hauptjob liebe ich <i>eigene Projekte</i> und
-                  <i>Herausforderungen</i> 🚀. Ich verwandle Ideen in <i>feine Produkte</i> und
-                  erwecke Visionen zum Leben!
-                </span>
-
-                <span class="mb-2">
-                  Abseits vom Coding bin ich ein großer Fan von <i>Musik</i> 🎵 und <i>Sport</i> 🏋️‍♂️.
-                  <br />Neuerdings aber auch Reisebegeistert und meine nächste Ziele sind:
-                  <i>Spanien</i> 🇪🇸 und <i>Japan</i> 🇯🇵.
-
+                  {{ t('aboutMe.hobbies') }}
                   <br />
                   <br />
-                  Wer weiß? Vielleicht starte ich hier einen kleinen Blog 📸
+                  {{ t('aboutMe.future') }}
                 </span>
               </div>
             </CardDescription>
@@ -334,27 +320,17 @@ const toggleLanguage = () => {
             class="no-scrollbar absolute inset-0 flex items-center justify-center p-6 text-white"
           >
             <div class="grid text-xs leading-relaxed xl:text-sm">
-              <span class="mb-2">Hey 👋</span>
+              <span class="mb-2">{{ t('aboutMe.greeting') }}</span>
+
+              <span class="mb-2 xl:mb-4">{{ t('aboutMe.intro') }}</span>
+
+              <span class="mb-2 xl:mb-4">{{ t('aboutMe.passion') }}</span>
 
               <span class="mb-2 xl:mb-4">
-                Ich bin <i>Reza Jaber</i>, 22 Jahre alt, <i>Softwareentwickler</i> aus
-                <i>Hamburg</i> 🇩🇪. <br />Meine Leidenschaft: <i>Webentwicklung</i> 💻
-              </span>
-
-              <span class="mb-2 xl:mb-4">
-                Neben meinem Hauptjob liebe ich <i>eigene Projekte</i> und
-                <i>Herausforderungen</i> 🚀. Ich verwandle Ideen in <i>feine Produkte</i> und
-                erwecke Visionen zum Leben!
-              </span>
-
-              <span class="mb-2 xl:mb-4">
-                Abseits vom Coding bin ich ein großer Fan von <i>Musik</i> 🎵 und <i>Sport</i> 🏋️‍♂️.
-                <br />Neuerdings aber auch Reisebegeistert und meine nächste Ziele sind:
-                <i>Spanien</i> 🇪🇸 und <i>Japan</i> 🇯🇵.
-
+                {{ t('aboutMe.hobbies') }}
                 <br />
                 <br />
-                Wer weiß? Vielleicht starte ich hier einen kleinen Blog 📸
+                {{ t('aboutMe.future') }}
               </span>
             </div>
           </div>
