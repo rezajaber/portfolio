@@ -324,21 +324,21 @@ const closeIfOutside = (event: MouseEvent) => {
             v-if="isHovered"
             class="no-scrollbar absolute inset-0 flex items-center justify-center p-6 text-white"
           >
-            <div class="grid text-xs leading-relaxed">
+            <div class="grid text-xs leading-relaxed xl:text-sm">
               <span class="mb-2">Hey 👋</span>
 
-              <span class="mb-2">
+              <span class="mb-2 xl:mb-4">
                 Ich bin <i>Reza Jaber</i>, 22 Jahre alt, <i>Softwareentwickler</i> aus
                 <i>Hamburg</i> 🇩🇪. <br />Meine Leidenschaft: <i>Webentwicklung</i> 💻
               </span>
 
-              <span class="mb-2">
+              <span class="mb-2 xl:mb-4">
                 Neben meinem Hauptjob liebe ich <i>eigene Projekte</i> und
                 <i>Herausforderungen</i> 🚀. Ich verwandle Ideen in <i>feine Produkte</i> und
                 erwecke Visionen zum Leben!
               </span>
 
-              <span class="mb-2">
+              <span class="mb-2 xl:mb-4">
                 Abseits vom Coding bin ich ein großer Fan von <i>Musik</i> 🎵 und <i>Sport</i> 🏋️‍♂️.
                 <br />Neuerdings aber auch Reisebegeistert und meine nächste Ziele sind:
                 <i>Spanien</i> 🇪🇸 und <i>Japan</i> 🇯🇵.
