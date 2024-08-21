@@ -9,7 +9,8 @@ import {
   Brush,
   ScrollText,
   Layers3,
-  Projector
+  Projector,
+  MousePointer2
 } from 'lucide-vue-next'
 
 import Button from '@/components/ui/button/Button.vue'
@@ -104,7 +105,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
-            class="glassy flex flex-col justify-between gap-2 sm:w-3/4 lg:justify-end"
+            class="glassy relative flex flex-col justify-between gap-2 sm:w-3/4 lg:justify-end"
           >
             <CardHeader>
               <Projector class="h-5 w-5 stroke-turquoise" />
@@ -115,6 +116,11 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
               Projekt ist eine Gelegenheit, Kreativität mit Funktionalität zu verbinden und
               innovative Ideen zum Leben zu erwecken.
             </CardDescription>
+
+            <div class="animated-cursor absolute right-10 top-20 flex">
+              <MousePointer2 class="fill-turquoise" />
+              <Badge class="mt-5 w-fit bg-turquoise text-white">Projekete</Badge>
+            </div>
           </Card>
 
           <Card
@@ -134,7 +140,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
         </div>
 
         <!-- CV & CONTACT -->
-        <div class="flex flex-col gap-3 sm:flex-row lg:h-40">
+        <div class="mb-3.5 flex flex-col gap-5 sm:flex-row lg:mb-0 lg:h-40">
           <Card
             v-motion
             :initial="{ opacity: 0, y: 100 }"
@@ -205,7 +211,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
         </div>
       </div>
 
-      <div class="hidden w-2/5 gap-3 lg:grid">
+      <div class="hidden w-1/2 gap-3 lg:grid">
         <img
           v-motion
           :initial="{ opacity: 0, scale: 0.9 }"
@@ -227,5 +233,27 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
   backdrop-filter: blur(12.4px);
   -webkit-backdrop-filter: blur(12.4px);
   border: 1px solid rgba(181, 176, 176, 0.25);
+}
+
+@keyframes cursorMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(15px, 5px);
+  }
+  50% {
+    transform: translate(-5px, 25px);
+  }
+  75% {
+    transform: translate(-25px, -35px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.animated-cursor {
+  animation: cursorMove 8s ease-in-out infinite;
 }
 </style>
