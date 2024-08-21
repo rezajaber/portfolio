@@ -13,7 +13,7 @@ export default defineConfig({
       plugins: [tailwind(), autoprefixer()]
     }
   },
-  base: '/',
+  base: '/portfolio/',
   plugins: [vue(), VueDevTools()],
   resolve: {
     alias: {
