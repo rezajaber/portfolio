@@ -20,6 +20,17 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 import { ref } from 'vue'
 
 const isHovered = ref(false)
+const showCVIframe = ref(false)
+
+const toggleCVIframe = () => {
+  showCVIframe.value = !showCVIframe.value
+}
+
+const closeIfOutside = (event: MouseEvent) => {
+  if (event.target === event.currentTarget) {
+    showCVIframe.value = false
+  }
+}
 </script>
 
 <template>
@@ -152,12 +163,13 @@ const isHovered = ref(false)
         </div>
 
         <!-- CV & CONTACT -->
-        <div class="mb-3.5 flex flex-col gap-5 sm:flex-row lg:mb-0 lg:h-44">
+        <div class="mb-3.5 flex flex-col gap-3 sm:flex-row lg:mb-0 lg:h-44">
           <Card
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 250 } }"
-            class="glassy relative flex flex-col justify-between gap-2 sm:w-1/4 lg:justify-end"
+            class="glassy relative flex cursor-pointer flex-col justify-between gap-2 sm:w-1/4"
+            @click="toggleCVIframe"
           >
             <CardHeader>
               <ScrollText class="card-icon h-5 w-5 stroke-gold" />
@@ -192,6 +204,17 @@ const isHovered = ref(false)
               <Badge class="w-fit justify-end border">Klicken</Badge>
             </div>
           </Card>
+        </div>
+
+        <!-- CV iframe -->
+        <div
+          v-if="showCVIframe"
+          class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+          @click="closeIfOutside"
+        >
+          <div class="h-5/6 w-full max-w-4xl rounded-xl px-6 lg:px-0">
+            <iframe src="/cv.pdf" class="h-full w-full rounded-lg" title="CV PDF"></iframe>
+          </div>
         </div>
 
         <div class="flex flex-col gap-3 sm:flex-row lg:hidden">
