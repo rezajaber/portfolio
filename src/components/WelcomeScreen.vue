@@ -17,7 +17,7 @@ const greetings = [
 
 const currentGreeting = ref(greetings[0])
 let currentIndex = 0
-let intervalId: number | null = null
+let intervalId: any | null = null
 
 const changeGreeting = () => {
   currentIndex = (currentIndex + 1) % greetings.length

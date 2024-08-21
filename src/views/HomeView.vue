@@ -240,7 +240,7 @@ const isHovered = ref(false)
           <img
             v-motion
             :initial="{ opacity: 0, scale: 0.9 }"
-            :enter="{ opacity: 1, scale: 1, transition: { duration: 700, delay: 400 } }"
+            :enter="{ opacity: 1, scale: 1, transition: { duration: 400, delay: 200 } }"
             src="../assets/img/me.jpg"
             :class="[
               'h-[568px] w-full rounded-xl object-cover transition-all duration-300',
@@ -248,6 +248,7 @@ const isHovered = ref(false)
             ]"
             alt="Profile image"
           />
+
           <div
             v-if="isHovered"
             class="absolute inset-0 flex items-center justify-center p-6 text-white"
@@ -267,10 +268,6 @@ const isHovered = ref(false)
               kommenden Monaten nach <strong>Spanien und Japan</strong>. Ich kann es kaum erwarten,
               Vielleicht starte ich hier sogar einen kleinen Blog!
             </p>
-          </div>
-
-          <div class="absolute -bottom-3 flex w-full justify-center">
-            <Badge>Über mich</Badge>
           </div>
         </div>
       </div>
