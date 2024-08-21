@@ -24,7 +24,7 @@ const showCVIframe = ref(false)
 const isSmallScreen = ref(false)
 
 const checkScreenSize = () => {
-  isSmallScreen.value = window.innerWidth < 640 // 640px is typically the 'sm' breakpoint
+  isSmallScreen.value = window.innerWidth < 1024
 }
 
 onMounted(() => {
@@ -206,20 +206,41 @@ const closeIfOutside = (event: MouseEvent) => {
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 500 } }"
-            class="glassy flex flex-col justify-between gap-2.5 sm:w-3/4 lg:justify-end"
+            class="glassy flex justify-between gap-2.5 sm:w-3/4 lg:justify-end"
           >
-            <CardHeader>
-              <Mails class="card-icon h-5 w-5 stroke-purple" />
-              <CardTitle class="text-purple">Kontakt</CardTitle>
-            </CardHeader>
-            <CardDescription class="text-xs leading-[18px] md:w-3/4">
-              Erwecke deine Vision mit neuester Technologie und aktuellen Design-Trends zum Leben.
-              Nutze einfach das Kontaktformular, um mich zu erreichen - ich freue mich darauf, dir
-              bei deinem Projekt zu helfen und es gemeinsam zum Erfolg zu führen.
-            </CardDescription>
+            <div class="grid gap-2.5">
+              <CardHeader>
+                <Mails class="card-icon h-5 w-5 stroke-purple" />
+                <CardTitle class="text-purple">Kontakt</CardTitle>
+              </CardHeader>
+              <CardDescription class="text-xs leading-[18px] md:w-3/4">
+                Erwecke deine Vision mit neuester Technologie und aktuellen Design-Trends zum Leben.
+                Nutze einfach das Kontaktformular, um mich zu erreichen - ich freue mich darauf, dir
+                bei deinem Projekt zu helfen und es gemeinsam zum Erfolg zu führen.
+              </CardDescription>
+            </div>
 
-            <div class="absolute inset-x-0 -bottom-3 flex w-full justify-center">
-              <Badge class="w-fit justify-end border">Klicken</Badge>
+            <div class="grid place-items-end gap-2.5">
+              <a href="mailto:amirrezajaber@gmail.com" target="_blank">
+                <Button size="sm" class="rounded-full border-white text-background">
+                  Mail <Mail class="ml-1.5 h-4 w-4" />
+                </Button>
+              </a>
+
+              <a href="https://github.com/rezajaber" target="_blank">
+                <Button size="sm" class="rounded-full border-white text-background">
+                  Github <Github class="ml-1.5 h-4 w-4" />
+                </Button>
+              </a>
+
+              <a href="https://www.linkedin.com/in/rezajaber/" target="_blank">
+                <Button
+                  size="sm"
+                  class="flex items-center rounded-full border-white text-background"
+                >
+                  Linkedin <Linkedin class="ml-1.5 h-4 w-4" />
+                </Button>
+              </a>
             </div>
           </Card>
         </div>
@@ -293,7 +314,7 @@ const closeIfOutside = (event: MouseEvent) => {
             :enter="{ opacity: 1, scale: 1, transition: { duration: 400, delay: 200 } }"
             src="../assets/img/me.jpg"
             :class="[
-              'h-[568px] w-full rounded-xl object-cover transition-all duration-300',
+              'h-[584px] w-full rounded-xl object-cover transition-all duration-300',
               { 'brightness-[0.25]': isHovered }
             ]"
             alt="Profile image"
