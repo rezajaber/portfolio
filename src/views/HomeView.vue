@@ -55,7 +55,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col justify-end gap-2.5"
           >
             <CardHeader>
-              <MonitorSmartphone class="stroke-gold h-5 w-5" />
+              <MonitorSmartphone class="h-5 w-5 stroke-gold" />
               <CardTitle class="text-gold">Web & Mobile App</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs">
@@ -70,7 +70,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col justify-end gap-2.5"
           >
             <CardHeader>
-              <Brush class="stroke-purple h-5 w-5" />
+              <Brush class="h-5 w-5 stroke-purple" />
               <CardTitle class="text-purple">Design & Creative</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs">
@@ -85,7 +85,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col justify-end gap-2.5"
           >
             <CardHeader>
-              <Code class="stroke-turquoise h-5 w-5" />
+              <Code class="h-5 w-5 stroke-turquoise" />
               <CardTitle class="text-turquoise">Development</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs">
@@ -94,6 +94,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
           </Card>
         </div>
 
+        <!-- PROJECTS & TECH STACK -->
         <div class="flex flex-col gap-3 sm:flex-row lg:h-56">
           <Card
             v-motion
@@ -102,7 +103,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col justify-end gap-2.5 sm:w-3/4"
           >
             <CardHeader>
-              <Projector class="stroke-turquoise h-5 w-5" />
+              <Projector class="h-5 w-5 stroke-turquoise" />
               <CardTitle class="text-turquoise">Projects</CardTitle>
             </CardHeader>
             <CardDescription class="w-72 text-xs">
@@ -117,7 +118,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4"
           >
             <CardHeader>
-              <Layers3 class="stroke-turquoise h-5 w-5" />
+              <Layers3 class="h-5 w-5 stroke-turquoise" />
               <CardTitle class="text-turquoise">Tech Stack</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs">
@@ -126,6 +127,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
           </Card>
         </div>
 
+        <!-- CV & CONTACT -->
         <div class="flex flex-col gap-3 sm:flex-row lg:h-40">
           <Card
             v-motion
@@ -134,7 +136,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4"
           >
             <CardHeader>
-              <ScrollText class="stroke-gold h-5 w-5" />
+              <ScrollText class="h-5 w-5 stroke-gold" />
               <CardTitle class="text-gold">CV</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs">
@@ -149,7 +151,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy sm:3/4 flex flex-col justify-end gap-2.5"
           >
             <CardHeader>
-              <Mails class="stroke-purple h-5 w-5" />
+              <Mails class="h-5 w-5 stroke-purple" />
               <CardTitle class="text-purple">Contact</CardTitle>
             </CardHeader>
             <CardDescription class="w-72 text-xs">
@@ -175,7 +177,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col gap-2.5 sm:h-80 sm:w-1/2"
           >
             <CardHeader>
-              <Mails class="stroke-purple h-5 w-5" />
+              <Mails class="h-5 w-5 stroke-purple" />
               <CardTitle class="text-purple">About me</CardTitle>
             </CardHeader>
             <CardDescription class="w-72 text-xs">
