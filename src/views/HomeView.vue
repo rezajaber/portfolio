@@ -32,7 +32,7 @@ const isHovered = ref(false)
       </div>
 
       <div class="flex w-full items-center justify-between lg:w-fit">
-        <div class="text-white">
+        <div class="text-white lg:hidden">
           <p class="text-xl">Reza Jaber</p>
           <p class="text-xs">Frontend-Entwickler | Hamburg</p>
         </div>
@@ -268,6 +268,7 @@ const isHovered = ref(false)
               Vielleicht starte ich hier sogar einen kleinen Blog!
             </p>
           </div>
+
           <div class="absolute -bottom-3 flex w-full justify-center">
             <Badge>Über mich</Badge>
           </div>
