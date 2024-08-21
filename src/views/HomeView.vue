@@ -163,7 +163,7 @@ const closeIfOutside = (event: MouseEvent) => {
         </div>
 
         <!-- CV & CONTACT -->
-        <div class="mb-3.5 flex flex-col gap-3 sm:flex-row lg:mb-0 lg:h-44">
+        <div class="mb-3.5 flex flex-col gap-5 sm:flex-row sm:gap-3 lg:mb-0 lg:h-44">
           <Card
             v-motion
             :initial="{ opacity: 0, y: 100 }"
@@ -212,7 +212,7 @@ const closeIfOutside = (event: MouseEvent) => {
           class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
           @click="closeIfOutside"
         >
-          <div class="h-5/6 w-full max-w-4xl rounded-xl px-6 lg:px-0">
+          <div class="h-1/2 w-full max-w-[360px] rounded-xl px-6 sm:h-5/6 sm:max-w-4xl lg:px-0">
             <iframe src="/cv.pdf" class="h-full w-full rounded-lg" title="CV PDF"></iframe>
           </div>
         </div>
