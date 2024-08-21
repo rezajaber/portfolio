@@ -215,21 +215,30 @@ const isHovered = ref(false)
               <CardTitle class="text-purple">About me</CardTitle>
             </CardHeader>
             <CardDescription class="no-scrollbar overflow-y-scroll text-xs leading-5">
-              <p class="text-xs leading-relaxed">
-                Hallo! Ich bin <strong>Reza Jaber</strong>, ein
-                <strong>22-jähriger Softwareentwickler</strong> aus der Weltstadt
-                <strong>Hamburg, Deutschland</strong>. Meine Leidenschaft liegt in der
-                <strong>Webentwicklung</strong>, in der ich meine Fähigkeiten seit
-                <strong>zwei Jahren</strong> verfeinere. Wenn ich nicht gerade für meinen Hauptjob
-                Code schreibe, findest du mich bei spannenden <strong>Nebenprojekten</strong>. Ich
-                liebe <strong>Herausforderungen</strong> und es begeistert mich,
-                <strong>Ideen in Produkte</strong> umzusetzen. Es geht nicht nur darum, Code zu
-                schreiben; es geht darum, Visionen zum Leben zu erwecken! Außerhalb der Codingwelt
-                bin ich ein großer Fan von <strong>Musik</strong> und <strong>Sport</strong>.
-                Kürzlich habe ich mit dem Reisen angefangen! Mein nächstes großes Abenteuer? Ich
-                reise in den kommenden Monaten nach <strong>Spanien und Japan</strong>. Ich kann es
-                kaum erwarten, Vielleicht starte ich hier sogar einen kleinen Blog!
-              </p>
+              <div class="grid text-xs leading-relaxed">
+                <span class="mb-2">Hey 👋</span>
+
+                <span class="mb-2">
+                  Ich bin <i>Reza Jaber</i>, 22 Jahre alt, <i>Softwareentwickler</i> aus
+                  <i>Hamburg</i> 🇩🇪. <br />Meine Leidenschaft: <i>Webentwicklung</i> 💻
+                </span>
+
+                <span class="mb-2">
+                  Neben meinem Hauptjob liebe ich <i>eigene Projekte</i> und
+                  <i>Herausforderungen</i> 🚀. Ich verwandle Ideen in <i>feine Produkte</i> und
+                  erwecke Visionen zum Leben!
+                </span>
+
+                <span class="mb-2">
+                  Abseits vom Coding bin ich ein großer Fan von <i>Musik</i> 🎵 und <i>Sport</i> 🏋️‍♂️.
+                  <br />Neuerdings aber auch Reisebegeistert und meine nächste Ziele sind:
+                  <i>Spanien</i> 🇪🇸 und <i>Japan</i> 🇯🇵.
+
+                  <br />
+                  <br />
+                  Wer weiß? Vielleicht starte ich hier einen kleinen Blog 📸
+                </span>
+              </div>
             </CardDescription>
           </Card>
         </div>
@@ -244,30 +253,39 @@ const isHovered = ref(false)
             src="../assets/img/me.jpg"
             :class="[
               'h-[568px] w-full rounded-xl object-cover transition-all duration-300',
-              { 'brightness-50': isHovered }
+              { 'brightness-[0.25]': isHovered }
             ]"
             alt="Profile image"
           />
 
           <div
             v-if="isHovered"
-            class="absolute inset-0 flex items-center justify-center p-6 text-white"
+            class="no-scrollbar absolute inset-0 flex items-center justify-center p-6 text-white"
           >
-            <p class="text-sm leading-relaxed">
-              Hallo! Ich bin <strong>Reza Jaber</strong>, ein
-              <strong>22-jähriger Softwareentwickler</strong> aus der Weltstadt
-              <strong>Hamburg, Deutschland</strong>. Meine Leidenschaft liegt in der
-              <strong>Webentwicklung</strong>, in der ich meine Fähigkeiten seit
-              <strong>zwei Jahren</strong> verfeinere. Wenn ich nicht gerade für meinen Hauptjob
-              Code schreibe, findest du mich bei spannenden <strong>Nebenprojekten</strong>. Ich
-              liebe <strong>Herausforderungen</strong> und es begeistert mich,
-              <strong>Ideen in Produkte</strong> umzusetzen. Es geht nicht nur darum, Code zu
-              schreiben; es geht darum, Visionen zum Leben zu erwecken! Außerhalb der Codingwelt bin
-              ich ein großer Fan von <strong>Musik</strong> und <strong>Sport</strong>. Kürzlich
-              habe ich mit dem Reisen angefangen! Mein nächstes großes Abenteuer? Ich reise in den
-              kommenden Monaten nach <strong>Spanien und Japan</strong>. Ich kann es kaum erwarten,
-              Vielleicht starte ich hier sogar einen kleinen Blog!
-            </p>
+            <div class="grid text-xs leading-relaxed">
+              <span class="mb-2">Hey 👋</span>
+
+              <span class="mb-2">
+                Ich bin <i>Reza Jaber</i>, 22 Jahre alt, <i>Softwareentwickler</i> aus
+                <i>Hamburg</i> 🇩🇪. <br />Meine Leidenschaft: <i>Webentwicklung</i> 💻
+              </span>
+
+              <span class="mb-2">
+                Neben meinem Hauptjob liebe ich <i>eigene Projekte</i> und
+                <i>Herausforderungen</i> 🚀. Ich verwandle Ideen in <i>feine Produkte</i> und
+                erwecke Visionen zum Leben!
+              </span>
+
+              <span class="mb-2">
+                Abseits vom Coding bin ich ein großer Fan von <i>Musik</i> 🎵 und <i>Sport</i> 🏋️‍♂️.
+                <br />Neuerdings aber auch Reisebegeistert und meine nächste Ziele sind:
+                <i>Spanien</i> 🇪🇸 und <i>Japan</i> 🇯🇵.
+
+                <br />
+                <br />
+                Wer weiß? Vielleicht starte ich hier einen kleinen Blog 📸
+              </span>
+            </div>
           </div>
         </div>
       </div>
