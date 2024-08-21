@@ -13,6 +13,7 @@ import {
 } from 'lucide-vue-next'
 
 import Button from '@/components/ui/button/Button.vue'
+import Badge from '@/components/ui/badge/Badge.vue'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 </script>
 
@@ -22,7 +23,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
     <div class="flex w-full justify-between">
       <div class="hidden text-white lg:block">
         <p class="text-xl">Reza Jaber</p>
-        <p class="text-xs">Frontend-Developer based in Hamburg, Germany</p>
+        <p class="text-xs">Frontend-Entwickler aus Hamburg, Deutschland</p>
       </div>
 
       <div class="flex w-full items-center justify-between lg:w-fit">
@@ -46,35 +47,37 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 
     <div class="flex flex-col items-center gap-4 lg:flex-row">
       <div class="grid h-full gap-3">
-        <!-- WHAT I DO-->
+        <!-- WAS ICH MACHE -->
         <div class="flex w-full flex-col gap-3 sm:flex-row lg:h-40">
           <Card
             v-motion
             :initial="{ opacity: 0, y: 100 }"
-            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
-            class="glassy flex flex-col justify-end gap-2.5"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 200 } }"
+            class="glassy flex flex-col justify-between gap-2 lg:justify-end"
           >
             <CardHeader>
-              <MonitorSmartphone class="h-5 w-5 stroke-gold" />
-              <CardTitle class="text-gold">Web & Mobile App</CardTitle>
+              <Brush class="h-5 w-5 stroke-purple" />
+              <CardTitle class="text-purple">UI & UX Design</CardTitle>
             </CardHeader>
-            <CardDescription class="text-xs">
-              Transforming ideas into exceptional web and mobile app experiences.
+            <CardDescription class="text-xs leading-[18px]">
+              Gestaltung intuitiver Benutzeroberflächen. Optimierung der User Experience durch
+              klares Design.
             </CardDescription>
           </Card>
 
           <Card
             v-motion
             :initial="{ opacity: 0, y: 100 }"
-            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 200 } }"
-            class="glassy flex flex-col justify-end gap-2.5"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
+            class="glassy flex flex-col justify-between gap-2 lg:justify-end"
           >
             <CardHeader>
-              <Brush class="h-5 w-5 stroke-purple" />
-              <CardTitle class="text-purple">Design & Creative</CardTitle>
+              <MonitorSmartphone class="h-5 w-5 stroke-gold" />
+              <CardTitle class="text-gold">Web & Mobile App</CardTitle>
             </CardHeader>
-            <CardDescription class="text-xs">
-              Crafting visually stunning design that connects deeply with your audience.
+            <CardDescription class="text-xs leading-[18px]">
+              Entwicklung skalierbarer Web- und Mobile-Apps. Ideen in funktionale Produkte
+              umwandeln.
             </CardDescription>
           </Card>
 
@@ -82,14 +85,15 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 300 } }"
-            class="glassy flex flex-col justify-end gap-2.5"
+            class="glassy flex flex-col justify-between gap-2 lg:justify-end"
           >
             <CardHeader>
               <Code class="h-5 w-5 stroke-turquoise" />
-              <CardTitle class="text-turquoise">Development</CardTitle>
+              <CardTitle class="text-turquoise">Entwicklung</CardTitle>
             </CardHeader>
-            <CardDescription class="text-xs">
-              Crafting visually stunning design that connects deeply with your audience.
+            <CardDescription class="text-xs leading-[18px]">
+              Erstellung von leistungsstarkem, sauberem und effizientem Code für Ihre
+              Projektvorstellungen .
             </CardDescription>
           </Card>
         </div>
@@ -100,14 +104,16 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
-            class="glassy flex flex-col justify-end gap-2.5 sm:w-3/4"
+            class="glassy flex flex-col justify-between gap-2 sm:w-3/4 lg:justify-end"
           >
             <CardHeader>
               <Projector class="h-5 w-5 stroke-turquoise" />
-              <CardTitle class="text-turquoise">Projects</CardTitle>
+              <CardTitle class="text-turquoise">Projekte</CardTitle>
             </CardHeader>
-            <CardDescription class="w-72 text-xs">
-              Crafting visually stunning design that connects deeply with your audience.
+            <CardDescription class="w-3/4 text-xs leading-[18px]">
+              Von persönlichen Nebenprojekten bis hin zu maßgeschneiderten Kundenlösungen - jedes
+              Projekt ist eine Gelegenheit, Kreativität mit Funktionalität zu verbinden und
+              innovative Ideen zum Leben zu erwecken.
             </CardDescription>
           </Card>
 
@@ -115,14 +121,14 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 600 } }"
-            class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4"
+            class="glassy flex flex-col justify-between gap-2 sm:w-1/4 lg:justify-end"
           >
             <CardHeader>
               <Layers3 class="h-5 w-5 stroke-turquoise" />
               <CardTitle class="text-turquoise">Tech Stack</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs">
-              Crafting visually stunning design that connects deeply with your audience.
+              Mein Go-To Techstack, womit ich meine, aber auch eure Projektwünsche umsetze.
             </CardDescription>
           </Card>
         </div>
@@ -133,30 +139,40 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 250 } }"
-            class="glassy flex flex-col justify-end gap-2.5 sm:w-1/4"
+            class="glassy relative flex flex-col justify-between gap-2 sm:w-1/4 lg:justify-end"
           >
             <CardHeader>
               <ScrollText class="h-5 w-5 stroke-gold" />
-              <CardTitle class="text-gold">CV</CardTitle>
+              <CardTitle class="text-gold">Lebenslauf</CardTitle>
             </CardHeader>
-            <CardDescription class="text-xs">
-              Bringing your vison to life with the latest technology and design trends.
+            <CardDescription class="text-xs leading-[18px]">
+              Anbei findet ihr meinen Werdegang.
             </CardDescription>
+
+            <div class="absolute inset-x-0 -bottom-3 flex w-full justify-center">
+              <Badge class="w-fit justify-end border">Klicken</Badge>
+            </div>
           </Card>
 
           <Card
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 500 } }"
-            class="glassy sm:3/4 flex flex-col justify-end gap-2.5"
+            class="glassy sm:3/4 flex flex-col justify-between gap-2.5 lg:justify-end"
           >
             <CardHeader>
               <Mails class="h-5 w-5 stroke-purple" />
-              <CardTitle class="text-purple">Contact</CardTitle>
+              <CardTitle class="text-purple">Kontakt</CardTitle>
             </CardHeader>
-            <CardDescription class="w-72 text-xs">
-              Bringing your vison to life with the latest technology and design trends.
+            <CardDescription class="w-3/4 text-xs leading-[18px]">
+              Erwecke deine Vision mit neuester Technologie und aktuellen Design-Trends zum Leben.
+              Nutze einfach das Kontaktformular, um mich zu erreichen - ich freue mich darauf, dir
+              bei deinem Projekt zu helfen und es gemeinsam zum Erfolg zu führen.
             </CardDescription>
+
+            <div class="absolute inset-x-0 -bottom-3 flex w-full justify-center">
+              <Badge class="w-fit justify-end border">Klicken</Badge>
+            </div>
           </Card>
         </div>
 
@@ -174,13 +190,13 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
-            class="glassy flex flex-col gap-2.5 sm:h-80 sm:w-1/2"
+            class="glassy flex flex-col gap-2 sm:h-80 sm:w-1/2"
           >
             <CardHeader>
               <Mails class="h-5 w-5 stroke-purple" />
               <CardTitle class="text-purple">About me</CardTitle>
             </CardHeader>
-            <CardDescription class="w-72 text-xs">
+            <CardDescription class="text-xs leading-5">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga deleniti vel sint
               dolores quos accusamus, sed harum reprehenderit. Iure aspernatur molestias, et
               voluptas unde vel nulla suscipit eos at adipisci? Lorem ipsum dolor sit amet
