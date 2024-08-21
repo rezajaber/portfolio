@@ -1,0 +1,55 @@
+{
+  "name": "Reza Jaber",
+  "jobTitle": "Frontend Developer based in Hamburg, Germany",
+  "jobTitleShort": "Frontend Developer | Hamburg",
+  "languageButton": "Deutsch",
+
+  "uiUxDesign": {
+    "title": "UI & UX Design",
+    "description": "Creating intuitive user interfaces. Optimizing user experience through clear design."
+  },
+
+  "webMobileApp": {
+    "title": "Web & Mobile App",
+    "description": "Developing scalable web and mobile apps. Transforming ideas into functional products."
+  },
+
+  "development": {
+    "title": "Development",
+    "description": "Creating powerful, clean, and efficient code for your project visions."
+  },
+
+  "projects": {
+    "title": "Projects",
+    "description": "From personal side projects to tailored client solutions - each project is an opportunity to combine creativity with functionality and bring innovative ideas to life.",
+    "badge": "Projects"
+  },
+
+  "techStack": {
+    "title": "Tech Stack",
+    "description": "My go-to tech stack, with which I implement both my own and your project wishes."
+  },
+
+  "cv": {
+    "title": "Resume",
+    "description": "Here you can find my career path.",
+    "openButton": "Open"
+  },
+
+  "contact": {
+    "title": "Contact",
+    "description": "Bring your vision to life with the latest technology and current design trends. Simply use the contact form to reach me - I look forward to helping you with your project and leading it to success together.",
+    "mailButton": "Mail",
+    "githubButton": "Github",
+    "linkedinButton": "LinkedIn"
+  },
+
+  "aboutMe": {
+    "title": "About me",
+    "greeting": "Hey 👋",
+    "intro": "I'm Reza Jaber, 22 years old, software developer from Hamburg 🇩🇪. My passion: web development 💻",
+    "passion": "Besides my main job, I love personal projects and challenges 🚀. I transform ideas into fine products and bring visions to life!",
+    "hobbies": "Apart from coding, I'm a big fan of music 🎵 and sports 🏋️‍♂️. Recently, I've also become enthusiastic about traveling, and my next destinations are: Spain 🇪🇸 and Japan 🇯🇵.",
+    "future": "Who knows? Maybe I'll start a little blog here 📸"
+  }
+}

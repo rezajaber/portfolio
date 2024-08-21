@@ -1,0 +1,55 @@
+{
+  "name": "Reza Jaber",
+  "jobTitle": "Frontend-Entwickler aus Hamburg, Deutschland",
+  "jobTitleShort": "Frontend-Entwickler | Hamburg",
+  "languageButton": "English",
+
+  "uiUxDesign": {
+    "title": "UI & UX Design",
+    "description": "Gestaltung intuitiver Benutzeroberflächen. Optimierung der User Experience durch klares Design."
+  },
+
+  "webMobileApp": {
+    "title": "Web & Mobile App",
+    "description": "Entwicklung skalierbarer Web- und Mobile-Apps. Ideen in funktionale Produkte umwandeln."
+  },
+
+  "development": {
+    "title": "Entwicklung",
+    "description": "Erstellung von leistungsstarkem, sauberem und effizientem Code für Ihre Projektvorstellungen."
+  },
+
+  "projects": {
+    "title": "Projekte",
+    "description": "Von persönlichen Nebenprojekten bis hin zu maßgeschneiderten Kundenlösungen - jedes Projekt ist eine Gelegenheit, Kreativität mit Funktionalität zu verbinden und innovative Ideen zum Leben zu erwecken.",
+    "badge": "Projekte"
+  },
+
+  "techStack": {
+    "title": "Tech Stack",
+    "description": "Mein Go-To Techstack, womit ich meine, aber auch eure Projektwünsche umsetze."
+  },
+
+  "cv": {
+    "title": "Lebenslauf",
+    "description": "Anbei findet ihr meinen Werdegang.",
+    "openButton": "Öffnen"
+  },
+
+  "contact": {
+    "title": "Kontakt",
+    "description": "Erwecke deine Vision mit neuester Technologie und aktuellen Design-Trends zum Leben. Nutze einfach das Kontaktformular, um mich zu erreichen - ich freue mich darauf, dir bei deinem Projekt zu helfen und es gemeinsam zum Erfolg zu führen.",
+    "mailButton": "Mail",
+    "githubButton": "Github",
+    "linkedinButton": "Linkedin"
+  },
+
+  "aboutMe": {
+    "title": "About me",
+    "greeting": "Hey 👋",
+    "intro": "Ich bin Reza Jaber, 22 Jahre alt, Softwareentwickler aus Hamburg 🇩🇪. Meine Leidenschaft: Webentwicklung 💻",
+    "passion": "Neben meinem Hauptjob liebe ich eigene Projekte und Herausforderungen 🚀. Ich verwandle Ideen in feine Produkte und erwecke Visionen zum Leben!",
+    "hobbies": "Abseits vom Coding bin ich ein großer Fan von Musik 🎵 und Sport 🏋️‍♂️. Neuerdings aber auch Reisebegeistert und meine nächste Ziele sind: Spanien 🇪🇸 und Japan 🇯🇵.",
+    "future": "Wer weiß? Vielleicht starte ich hier einen kleinen Blog 📸"
+  }
+}

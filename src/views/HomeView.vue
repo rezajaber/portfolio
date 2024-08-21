@@ -18,6 +18,7 @@ import Button from '@/components/ui/button/Button.vue'
 import Badge from '@/components/ui/badge/Badge.vue'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const isHovered = ref(false)
 const showCVIframe = ref(false)
@@ -49,6 +50,12 @@ const closeIfOutside = (event: MouseEvent) => {
     showCVIframe.value = false
   }
 }
+
+const { t, locale } = useI18n()
+
+const toggleLanguage = () => {
+  locale.value = locale.value === 'de' ? 'en' : 'de'
+}
 </script>
 
 <template>
@@ -56,18 +63,20 @@ const closeIfOutside = (event: MouseEvent) => {
     <!-- MAIN PAGE -->
     <div class="flex w-full justify-between">
       <div class="hidden text-white lg:block">
-        <p class="text-xl">Reza Jaber</p>
-        <p class="text-xs">Frontend-Entwickler aus Hamburg, Deutschland</p>
+        <p class="text-xl">{{ t('name') }}</p>
+        <p class="text-xs">{{ t('jobTitle') }}</p>
       </div>
 
       <div class="flex w-full items-center justify-between lg:w-fit">
         <div class="text-white lg:hidden">
-          <p class="text-xl">Reza Jaber</p>
-          <p class="text-xs">Frontend-Entwickler | Hamburg</p>
+          <p class="text-xl">{{ t('name') }}</p>
+          <p class="text-xs">{{ t('jobTitleShort') }}</p>
         </div>
 
         <div class="justify-bewtween flex gap-2.5">
-          <Button size="sm" class="hidden lg:block" variant="link">English</Button>
+          <Button @click="toggleLanguage" size="sm" class="hidden lg:block" variant="link">
+            {{ t('languageButton') }}
+          </Button>
 
           <a href="https://www.linkedin.com/in/rezajaber/" target="_blank">
             <Button size="sm" class="rounded-full border-white text-background"
