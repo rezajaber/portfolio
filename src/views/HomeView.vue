@@ -57,7 +57,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col justify-between gap-2 lg:justify-end"
           >
             <CardHeader>
-              <Brush class="h-5 w-5 stroke-purple" />
+              <Brush class="card-icon h-5 w-5 stroke-purple" />
               <CardTitle class="text-purple">UI & UX Design</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs leading-[18px]">
@@ -73,7 +73,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col justify-between gap-2 lg:justify-end"
           >
             <CardHeader>
-              <MonitorSmartphone class="h-5 w-5 stroke-gold" />
+              <MonitorSmartphone class="card-icon h-5 w-5 stroke-gold" />
               <CardTitle class="text-gold">Web & Mobile App</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs leading-[18px]">
@@ -89,7 +89,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col justify-between gap-2 lg:justify-end"
           >
             <CardHeader>
-              <Code class="h-5 w-5 stroke-turquoise" />
+              <Code class="card-icon h-5 w-5 stroke-turquoise" />
               <CardTitle class="text-turquoise">Entwicklung</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs leading-[18px]">
@@ -108,7 +108,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy relative flex flex-col justify-between gap-2 sm:w-3/4 lg:justify-end"
           >
             <CardHeader>
-              <Projector class="h-5 w-5 stroke-turquoise" />
+              <Projector class="card-icon h-5 w-5 stroke-turquoise" />
               <CardTitle class="text-turquoise">Projekte</CardTitle>
             </CardHeader>
             <CardDescription class="w-3/4 text-xs leading-[18px]">
@@ -119,7 +119,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 
             <div class="animated-cursor absolute right-10 top-20 flex">
               <MousePointer2 class="fill-turquoise" />
-              <Badge class="mt-5 w-fit bg-turquoise text-white">Projekete</Badge>
+              <Badge class="mt-5 w-fit bg-turquoise text-white">Projekte</Badge>
             </div>
           </Card>
 
@@ -130,8 +130,8 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col justify-between gap-2 sm:w-1/4 lg:justify-end"
           >
             <CardHeader>
-              <Layers3 class="h-5 w-5 stroke-turquoise" />
-              <CardTitle class="text-turquoise">Tech Stack</CardTitle>
+              <Layers3 class="card-icon h-5 w-5 stroke-gold" />
+              <CardTitle class="text-gold">Tech Stack</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs">
               Mein Go-To Techstack, womit ich meine, aber auch eure Projektwünsche umsetze.
@@ -148,7 +148,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy relative flex flex-col justify-between gap-2 sm:w-1/4 lg:justify-end"
           >
             <CardHeader>
-              <ScrollText class="h-5 w-5 stroke-gold" />
+              <ScrollText class="card-icon h-5 w-5 stroke-gold" />
               <CardTitle class="text-gold">Lebenslauf</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs leading-[18px]">
@@ -167,7 +167,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy sm:3/4 flex flex-col justify-between gap-2.5 lg:justify-end"
           >
             <CardHeader>
-              <Mails class="h-5 w-5 stroke-purple" />
+              <Mails class="card-icon h-5 w-5 stroke-purple" />
               <CardTitle class="text-purple">Kontakt</CardTitle>
             </CardHeader>
             <CardDescription class="w-3/4 text-xs leading-[18px]">
@@ -199,7 +199,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
             class="glassy flex flex-col gap-2 sm:h-80 sm:w-1/2"
           >
             <CardHeader>
-              <Mails class="h-5 w-5 stroke-purple" />
+              <Mails class="card-icon h-5 w-5 stroke-purple" />
               <CardTitle class="text-purple">About me</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs leading-5">
@@ -233,6 +233,11 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
   backdrop-filter: blur(12.4px);
   -webkit-backdrop-filter: blur(12.4px);
   border: 1px solid rgba(181, 176, 176, 0.25);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.glassy:hover {
+  box-shadow: 0 0 12px rgba(225, 225, 225, 0.25);
 }
 
 @keyframes cursorMove {
@@ -255,5 +260,31 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 
 .animated-cursor {
   animation: cursorMove 8s ease-in-out infinite;
+}
+@keyframes flipIcon {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes quickFlip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.card-icon {
+  transition: transform 0.3s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.glassy:hover .card-icon {
+  animation: quickFlip 0.5s ease-in-out;
 }
 </style>
