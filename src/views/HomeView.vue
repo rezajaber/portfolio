@@ -17,13 +17,31 @@ import {
 import Button from '@/components/ui/button/Button.vue'
 import Badge from '@/components/ui/badge/Badge.vue'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const isHovered = ref(false)
 const showCVIframe = ref(false)
+const isSmallScreen = ref(false)
 
-const toggleCVIframe = () => {
-  showCVIframe.value = !showCVIframe.value
+const checkScreenSize = () => {
+  isSmallScreen.value = window.innerWidth < 640 // 640px is typically the 'sm' breakpoint
+}
+
+onMounted(() => {
+  checkScreenSize()
+  window.addEventListener('resize', checkScreenSize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkScreenSize)
+})
+
+const toggleCV = () => {
+  if (isSmallScreen.value) {
+    window.open('/cv.pdf', '_blank')
+  } else {
+    showCVIframe.value = !showCVIframe.value
+  }
 }
 
 const closeIfOutside = (event: MouseEvent) => {
@@ -169,7 +187,7 @@ const closeIfOutside = (event: MouseEvent) => {
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 250 } }"
             class="glassy relative flex cursor-pointer flex-col justify-between gap-2 sm:w-1/4"
-            @click="toggleCVIframe"
+            @click="toggleCV"
           >
             <CardHeader>
               <ScrollText class="card-icon h-5 w-5 stroke-gold" />
@@ -180,7 +198,7 @@ const closeIfOutside = (event: MouseEvent) => {
             </CardDescription>
 
             <div class="absolute inset-x-0 -bottom-3 flex w-full justify-center">
-              <Badge class="w-fit justify-end border">Klicken</Badge>
+              <Badge class="w-fit justify-end border">Öffnen</Badge>
             </div>
           </Card>
 
@@ -206,9 +224,9 @@ const closeIfOutside = (event: MouseEvent) => {
           </Card>
         </div>
 
-        <!-- CV iframe -->
+        <!-- CV iframe (only shown on larger screens) -->
         <div
-          v-if="showCVIframe"
+          v-if="showCVIframe && !isSmallScreen"
           class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
           @click="closeIfOutside"
         >
