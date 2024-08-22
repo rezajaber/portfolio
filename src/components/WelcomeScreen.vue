@@ -1,7 +1,16 @@
+Optimized Vue 3 Greeting Component
+
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 
-const greetings = [
+// Define the type for a greeting
+type Greeting = {
+  text: string
+  lang: string
+}
+
+// Data
+const greetings: Greeting[] = [
   { text: 'Hello', lang: 'en' },
   { text: 'Guten Tag', lang: 'de' },
   { text: 'こんにちは', lang: 'ja' },
@@ -15,24 +24,45 @@ const greetings = [
   { text: 'नमस्ते', lang: 'hi' }
 ]
 
-const currentGreeting = ref(greetings[0])
+// Reactive state
+const currentGreeting = ref<Greeting>(greetings[0])
 let currentIndex = 0
-let intervalId: any | null = null
+let intervalId: number | null = null
 
+// Methods
 const changeGreeting = () => {
   currentIndex = (currentIndex + 1) % greetings.length
   currentGreeting.value = greetings[currentIndex]
 }
 
-const fontClass = computed(() => `font-${currentGreeting.value.lang}`)
+// Computed properties
+const fontClass = computed(() => {
+  const langToFont: Record<string, string> = {
+    en: 'font-roboto',
+    fr: 'font-lora',
+    es: 'font-playfair',
+    it: 'font-montserrat',
+    ja: 'font-noto-sans-jp',
+    zh: 'font-noto-sans-sc',
+    ko: 'font-noto-sans-kr',
+    de: 'font-source-sans-pro',
+    pt: 'font-open-sans',
+    hi: 'font-poppins',
+    fa: 'font-vazirmatn'
+  }
+  return langToFont[currentGreeting.value.lang] || ''
+})
 
+// Lifecycle hooks
 onMounted(() => {
+  // Start the greeting change interval after a short delay
   setTimeout(() => {
-    intervalId = setInterval(changeGreeting, 175)
+    intervalId = window.setInterval(changeGreeting, 175)
   }, 250)
 })
 
 onUnmounted(() => {
+  // Clear the interval when the component is unmounted
   if (intervalId !== null) {
     clearInterval(intervalId)
   }
@@ -43,37 +73,17 @@ onUnmounted(() => {
   <div class="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-[#0f1010]">
     <!-- Background elements -->
     <div class="absolute inset-0">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-      <div class="shape shape-4"></div>
+      <div v-for="i in 4" :key="i" :class="`shape shape-${i}`"></div>
     </div>
 
-    <h1
-      :class="[
-        'relative z-10 text-center text-5xl font-extralight text-white',
-        fontClass,
-        {
-          'font-roboto': currentGreeting.lang === 'en',
-          'font-lora': currentGreeting.lang === 'fr',
-          'font-playfair': currentGreeting.lang === 'es',
-          'font-montserrat': currentGreeting.lang === 'it',
-          'font-noto-sans-jp': currentGreeting.lang === 'ja',
-          'font-noto-sans-sc': currentGreeting.lang === 'zh',
-          'font-noto-sans-kr': currentGreeting.lang === 'ko',
-          'font-source-sans-pro': currentGreeting.lang === 'de',
-          'font-open-sans': currentGreeting.lang === 'pt',
-          'font-poppins': currentGreeting.lang === 'hi',
-          'font-vazirmatn': currentGreeting.lang === 'fa'
-        }
-      ]"
-    >
+    <!-- Greeting text -->
+    <h1 :class="['relative z-10 text-center text-5xl font-extralight text-white', fontClass]">
       · {{ currentGreeting.text }}
     </h1>
   </div>
 </template>
-
 <style>
+/* Import required fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Lora&family=Playfair+Display&family=Montserrat&family=Noto+Sans+JP&family=Noto+Sans+SC&family=Noto+Sans+KR&family=Source+Sans+Pro&family=Open+Sans&family=Poppins&family=Vazirmatn&display=swap');
 
 /* Styles for fluid shapes */
@@ -84,6 +94,7 @@ onUnmounted(() => {
   mix-blend-mode: screen;
 }
 
+/* Individual shape styles */
 .shape-1 {
   top: -30%;
   left: -20%;
@@ -120,6 +131,7 @@ onUnmounted(() => {
   animation: floatShape4 22s ease-in-out infinite;
 }
 
+/* Keyframe animations for shapes */
 @keyframes floatShape1 {
   0%,
   100% {
