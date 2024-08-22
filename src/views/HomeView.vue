@@ -93,7 +93,7 @@ const toggleLanguage = () => {
             @click="toggleLanguage"
             size="sm"
             variant="outline"
-            class="rounded-full border-gray-600 px-2 hover:bg-white"
+            class="rounded-full border-gray-600 hover:bg-white"
           >
             {{ t('languageButton') }}
           </Button>
@@ -126,7 +126,7 @@ const toggleLanguage = () => {
             v-motion
             :initial="{ opacity: 0, scale: 0.9 }"
             :enter="{ opacity: 1, scale: 1, transition: { duration: 700, delay: 225 } }"
-            src="../assets/img/friends.jpg"
+            src="../assets/img/friends.webp"
             class="h-80 rounded-xl object-cover sm:w-1/2"
             alt="Profile Image"
           />
@@ -329,7 +329,7 @@ const toggleLanguage = () => {
             v-motion
             :initial="{ opacity: 0, scale: 0.9 }"
             :enter="{ opacity: 1, scale: 1, transition: { duration: 400, delay: 200 } }"
-            src="../assets/img/me.jpg"
+            src="../assets/img/me.webp"
             :class="[
               'h-[584px] w-full rounded-xl object-cover transition-all duration-300',
               { 'brightness-[0.25]': isHovered }
