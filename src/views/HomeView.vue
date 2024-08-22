@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+
+import Header from '@/components/Header.vue'
+
+import Button from '@/components/ui/button/Button.vue'
+import Badge from '@/components/ui/badge/Badge.vue'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import {
   Linkedin,
   Github,
@@ -14,12 +21,8 @@ import {
   CircleUser
 } from 'lucide-vue-next'
 
-import Button from '@/components/ui/button/Button.vue'
-import Badge from '@/components/ui/badge/Badge.vue'
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-import Header from '@/components/Header.vue'
+const { t } = useI18n()
 
 const isHovered = ref(false)
 const showCVIframe = ref(false)
@@ -52,11 +55,37 @@ const closeIfOutside = (event: MouseEvent) => {
   }
 }
 
-const { t, locale } = useI18n()
+const cards = computed(() => [
+  {
+    title: t('uiUxDesign.title'),
+    description: t('uiUxDesign.description'),
+    icon: Brush,
+    colorClass: 'text-purple',
+    iconClass: 'stroke-purple'
+  },
+  {
+    title: t('webMobileApp.title'),
+    description: t('webMobileApp.description'),
+    icon: MonitorSmartphone,
+    colorClass: 'text-gold',
+    iconClass: 'stroke-gold'
+  },
+  {
+    title: t('development.title'),
+    description: t('development.description'),
+    icon: Code,
+    colorClass: 'text-turquoise',
+    iconClass: 'stroke-turquoise'
+  }
+])
 
-const toggleLanguage = () => {
-  locale.value = locale.value === 'de' ? 'en' : 'de'
-}
+// Memoize the about me content
+const aboutMeContent = computed(() => [
+  t('aboutMe.greeting'),
+  t('aboutMe.intro'),
+  t('aboutMe.passion'),
+  `${t('aboutMe.hobbies')}\n\n${t('aboutMe.future')}`
+])
 </script>
 
 <template>
@@ -66,6 +95,7 @@ const toggleLanguage = () => {
     <!-- MAIN PAGE -->
     <div class="flex flex-col items-center gap-4 lg:flex-row">
       <div class="grid h-full gap-3">
+        <!-- Mobile layout components -->
         <div class="flex flex-col gap-3 sm:flex-row lg:hidden">
           <img
             v-motion
@@ -88,69 +118,39 @@ const toggleLanguage = () => {
             </CardHeader>
             <CardDescription class="no-scrollbar overflow-y-scroll text-xs leading-5">
               <div class="grid text-xs leading-relaxed">
-                <span class="mb-2">{{ t('aboutMe.greeting') }}</span>
-
-                <span class="mb-2">{{ t('aboutMe.intro') }}</span>
-
-                <span class="mb-2">{{ t('aboutMe.passion') }}</span>
-
-                <span class="mb-2">
-                  {{ t('aboutMe.hobbies') }}
-                  <br />
-                  <br />
-                  {{ t('aboutMe.future') }}
+                <span v-for="(content, index) in aboutMeContent" :key="index" class="mb-2">
+                  {{ content }}
                 </span>
               </div>
             </CardDescription>
           </Card>
         </div>
 
-        <!-- WAS ICH MACHE -->
+        <!-- SKILLS SECTION -->
         <div class="flex w-full flex-col gap-3 sm:flex-row lg:h-40">
-          <h3 class="-mb-2 text-lg font-medium text-white sm:hidden">MY SKILLS</h3>
+          <h3
+            v-motion
+            :initial="{ opacity: 0, y: 50 }"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 1000 } }"
+            class="-mb-2 text-lg font-medium text-white sm:hidden"
+          >
+            {{ t('other.skills') }}
+          </h3>
 
           <Card
+            v-for="(card, index) in cards"
+            :key="index"
             v-motion
             :initial="{ opacity: 0, y: 100 }"
-            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 200 } }"
-            class="glassy flex flex-col justify-between gap-2 lg:justify-end"
+            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 200 + index * 100 } }"
+            class="glassy flex flex-col justify-between gap-2"
           >
             <CardHeader>
-              <Brush class="card-icon h-5 w-5 stroke-purple" />
-              <CardTitle class="text-purple">{{ t('uiUxDesign.title') }}</CardTitle>
+              <component :is="card.icon" :class="['card-icon h-5 w-5', card.iconClass]" />
+              <CardTitle :class="card.colorClass">{{ card.title }}</CardTitle>
             </CardHeader>
             <CardDescription class="text-xs leading-[18px]">
-              {{ t('uiUxDesign.description') }}
-            </CardDescription>
-          </Card>
-
-          <Card
-            v-motion
-            :initial="{ opacity: 0, y: 100 }"
-            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
-            class="glassy flex flex-col justify-between gap-2 lg:justify-end"
-          >
-            <CardHeader>
-              <MonitorSmartphone class="card-icon h-5 w-5 stroke-gold" />
-              <CardTitle class="text-gold">{{ t('webMobileApp.title') }}</CardTitle>
-            </CardHeader>
-            <CardDescription class="text-xs leading-[18px]">
-              {{ t('webMobileApp.description') }}
-            </CardDescription>
-          </Card>
-
-          <Card
-            v-motion
-            :initial="{ opacity: 0, y: 100 }"
-            :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 300 } }"
-            class="glassy flex flex-col justify-start gap-2"
-          >
-            <CardHeader>
-              <Code class="card-icon h-5 w-5 stroke-turquoise" />
-              <CardTitle class="text-turquoise">{{ t('development.title') }}</CardTitle>
-            </CardHeader>
-            <CardDescription class="text-xs leading-[18px]">
-              {{ t('development.description') }}
+              {{ card.description }}
             </CardDescription>
           </Card>
         </div>
@@ -257,17 +257,20 @@ const toggleLanguage = () => {
         </div>
 
         <!-- CV iframe (only shown on larger screens) -->
-        <div
-          v-if="showCVIframe && !isSmallScreen"
-          class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-          @click="closeIfOutside"
-        >
-          <div class="h-1/2 w-full max-w-[360px] rounded-xl px-6 sm:h-5/6 sm:max-w-4xl lg:px-0">
-            <iframe src="/cv.pdf" class="h-full w-full rounded-lg" title="CV PDF"></iframe>
+        <Teleport to="body">
+          <div
+            v-if="showCVIframe && !isSmallScreen"
+            class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            @click="closeIfOutside"
+          >
+            <div class="h-1/2 w-full max-w-[360px] rounded-xl px-6 sm:h-5/6 sm:max-w-4xl lg:px-0">
+              <iframe src="/cv.pdf" class="h-full w-full rounded-lg" title="CV PDF"></iframe>
+            </div>
           </div>
-        </div>
+        </Teleport>
       </div>
 
+      <!-- Large screen about me section -->
       <div class="relative hidden w-1/2 gap-3 lg:grid">
         <div class="relative" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
           <img
@@ -287,17 +290,8 @@ const toggleLanguage = () => {
             class="no-scrollbar absolute inset-0 flex items-center justify-center p-6 text-white"
           >
             <div class="grid text-xs leading-relaxed xl:text-sm">
-              <span class="mb-2">{{ t('aboutMe.greeting') }}</span>
-
-              <span class="mb-2 xl:mb-4">{{ t('aboutMe.intro') }}</span>
-
-              <span class="mb-2 xl:mb-4">{{ t('aboutMe.passion') }}</span>
-
-              <span class="mb-2 xl:mb-4">
-                {{ t('aboutMe.hobbies') }}
-                <br />
-                <br />
-                {{ t('aboutMe.future') }}
+              <span v-for="(content, index) in aboutMeContent" :key="index" class="mb-2 xl:mb-4">
+                {{ content }}
               </span>
             </div>
           </div>
