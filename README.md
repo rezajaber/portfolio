@@ -5,5 +5,3 @@ Hey there! 👋 Welcome to my corner of the web. This portfolio is more than jus
 🚀 But this is just the beginning! Soon, this space will also feature a blog where I’ll share my thoughts on tech, coding tips, and more. 
 
 Feel free to explore and connect with me if anything catches your eye! 🌐
-
-![My Picture Here](#)
