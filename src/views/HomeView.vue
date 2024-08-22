@@ -170,11 +170,6 @@ const aboutMeContent = computed(() => [
             <CardDescription class="text-xs leading-[18px] md:w-3/4">
               {{ t('projects.description') }}
             </CardDescription>
-
-            <div class="animated-cursor absolute right-10 top-20 flex">
-              <MousePointer2 class="fill-turquoise" />
-              <Badge class="mt-5 w-fit bg-turquoise text-white">{{ t('projects.badge') }}</Badge>
-            </div>
           </Card>
 
           <Card
@@ -331,18 +326,6 @@ const aboutMeContent = computed(() => [
   }
   100% {
     transform: translate(0, 0);
-  }
-}
-
-.animated-cursor {
-  animation: cursorMove 8s ease-in-out infinite;
-}
-@keyframes flipIcon {
-  0% {
-    transform: rotateY(0deg);
-  }
-  100% {
-    transform: rotateY(360deg);
   }
 }
 
