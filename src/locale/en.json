@@ -41,7 +41,13 @@
     "description": "Bring your vision to life with the latest technology and current design trends. Simply use the contact form to reach me - I look forward to helping you with your project and leading it to success together.",
     "mailButton": "Mail",
     "githubButton": "Github",
-    "linkedinButton": "LinkedIn"
+    "linkedinButton": "LinkedIn",
+    "linkedinProfile": "Visit LinkedIn profile",
+    "githubProfile": "Visit GitHub profile",
+    "emailContact": "Send an email",
+    "mailAriaLabel": "Send an email to Amirreza Jaber",
+    "githubAriaLabel": "Visit Amirreza Jaber's GitHub profile",
+    "linkedinAriaLabel": "Visit Amirreza Jaber's LinkedIn profile"
   },
 
   "aboutMe": {

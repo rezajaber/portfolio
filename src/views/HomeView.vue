@@ -17,7 +17,6 @@ import {
   ScrollText,
   Layers3,
   Projector,
-  MousePointer2,
   CircleUser
 } from 'lucide-vue-next'
 
@@ -227,24 +226,38 @@ const aboutMeContent = computed(() => [
             </div>
 
             <div class="flex place-items-end gap-2.5 sm:grid">
-              <a href="mailto:amirrezajaber@gmail.com" target="_blank">
+              <a
+                href="mailto:amirrezajaber@gmail.com"
+                target="_blank"
+                :aria-label="t('contact.mailAriaLabel')"
+              >
                 <Button size="sm" class="rounded-full border-white text-background">
-                  {{ t('contact.mailButton') }} <Mail class="ml-1.5 h-4 w-4" />
+                  {{ t('contact.mailButton') }} <Mail class="ml-1.5 h-4 w-4" aria-hidden="true" />
                 </Button>
               </a>
 
-              <a href="https://github.com/rezajaber" target="_blank">
+              <a
+                href="https://github.com/rezajaber"
+                target="_blank"
+                :aria-label="t('contact.githubAriaLabel')"
+              >
                 <Button size="sm" class="rounded-full border-white text-background">
-                  {{ t('contact.githubButton') }} <Github class="ml-1.5 h-4 w-4" />
+                  {{ t('contact.githubButton') }}
+                  <Github class="ml-1.5 h-4 w-4" aria-hidden="true" />
                 </Button>
               </a>
 
-              <a href="https://www.linkedin.com/in/rezajaber/" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/rezajaber/"
+                target="_blank"
+                :aria-label="t('contact.linkedinAriaLabel')"
+              >
                 <Button
                   size="sm"
                   class="flex items-center rounded-full border-white text-background"
                 >
-                  {{ t('contact.linkedinButton') }} <Linkedin class="ml-1.5 h-4 w-4" />
+                  {{ t('contact.linkedinButton') }}
+                  <Linkedin class="ml-1.5 h-4 w-4" aria-hidden="true" />
                 </Button>
               </a>
             </div>

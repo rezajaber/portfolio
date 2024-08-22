@@ -41,7 +41,13 @@
     "description": "Erwecke deine Vision mit neuester Technologie und aktuellen Design-Trends zum Leben. Nutze einfach das Kontaktformular, um mich zu erreichen - ich freue mich darauf, dir bei deinem Projekt zu helfen und es gemeinsam zum Erfolg zu führen.",
     "mailButton": "Mail",
     "githubButton": "Github",
-    "linkedinButton": "Linkedin"
+    "linkedinButton": "Linkedin",
+    "linkedinProfile": "LinkedIn-Profil besuchen",
+    "githubProfile": "GitHub-Profil besuchen",
+    "emailContact": "Schicken Sie eine E-Mail",
+    "mailAriaLabel": "Send an email to Amirreza Jaber",
+    "githubAriaLabel": "Visit Amirreza Jaber's GitHub profile",
+    "linkedinAriaLabel": "Visit Amirreza Jaber's LinkedIn profile"
   },
 
   "aboutMe": {

@@ -32,9 +32,13 @@ onUnmounted(() => {
 
 // Social links data
 const socialLinks = [
-  { href: 'https://www.linkedin.com/in/rezajaber/', icon: Linkedin },
-  { href: 'https://github.com/rezajaber', icon: Github },
-  { href: 'mailto:amirrezajaber@gmail.com', icon: Mail }
+  {
+    href: 'https://www.linkedin.com/in/rezajaber/',
+    icon: Linkedin,
+    label: t('contact.linkedinProfile')
+  },
+  { href: 'https://github.com/rezajaber', icon: Github, label: t('contact.githubProfile') },
+  { href: 'mailto:amirrezajaber@gmail.com', icon: Mail, label: t('contact.emailContact') }
 ]
 </script>
 
@@ -63,13 +67,14 @@ const socialLinks = [
         size="sm"
         variant="outline"
         class="rounded-full border-gray-600 hover:bg-white"
+        :aria-label="t('toggleLanguage')"
       >
         {{ t('languageButton') }}
       </Button>
 
       <div v-for="link in socialLinks" :key="link.href">
         <a :href="link.href" target="_blank">
-          <Button size="sm" class="rounded-full text-background">
+          <Button size="sm" class="rounded-full text-background" :aria-label="link.label">
             <component :is="link.icon" class="h-4 w-4" />
           </Button>
         </a>
