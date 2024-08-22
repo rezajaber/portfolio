@@ -93,7 +93,7 @@ const toggleLanguage = () => {
             @click="toggleLanguage"
             size="sm"
             variant="outline"
-            class="rounded-full border-gray-600 px-2 hover:bg-white"
+            class="rounded-full border-gray-600 hover:bg-white"
           >
             {{ t('languageButton') }}
           </Button>
