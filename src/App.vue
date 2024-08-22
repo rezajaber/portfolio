@@ -16,7 +16,7 @@ onMounted(() => {
   <div class="dark relative overflow-hidden bg-background p-6 lg:p-0 lg:px-6">
     <!-- Background elements -->
     <div class="absolute inset-0">
-      <!-- New fluid shapes -->
+      <!-- Optimized fluid shapes -->
       <div class="shape shape-1"></div>
       <div class="shape shape-2"></div>
       <div class="shape shape-3"></div>
@@ -24,13 +24,13 @@ onMounted(() => {
 
     <!-- Welcome Screen -->
     <Transition name="spring-up" appear>
-      <WelcomeScreen v-if="showWelcome" />
+      <WelcomeScreen v-show="showWelcome" />
     </Transition>
 
     <!-- Main content -->
     <Transition name="fade" mode="out-in">
       <div
-        v-if="!showWelcome"
+        v-show="!showWelcome"
         class="relative z-10 mx-auto flex min-h-screen max-w-[1280px] items-center justify-center"
       >
         <RouterView />
@@ -40,34 +40,38 @@ onMounted(() => {
 </template>
 
 <style>
+:root {
+  --shape-blur: 55px;
+  --shape-opacity: 0.4;
+  --transition-duration: 0.5s;
+}
+
 /* TRANSITION */
-.spring-up-enter-active {
-  transition: opacity 0.5s ease;
-}
-.spring-up-leave-active {
-  transition: transform 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-}
-.spring-up-enter-from {
-  opacity: 0;
-}
-.spring-up-leave-to {
-  transform: translateY(-100%);
-}
+.spring-up-enter-active,
+.spring-up-leave-active,
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: all var(--transition-duration) ease;
+  will-change: opacity, transform;
 }
+
+.spring-up-enter-from,
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
 
-/* New styles for fluid shapes */
+.spring-up-leave-to {
+  transform: translateY(-100%);
+}
+
+/* Optimized styles for fluid shapes */
 .shape {
   position: absolute;
   border-radius: 50%;
-  filter: blur(55px);
-  opacity: 0.4;
+  filter: blur(var(--shape-blur));
+  opacity: var(--shape-opacity);
+  will-change: transform;
 }
 
 .shape-1 {
@@ -98,28 +102,19 @@ onMounted(() => {
 }
 
 @keyframes moveShape1 {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  100% {
+  to {
     transform: translate(5%, 5%) rotate(10deg);
   }
 }
 
 @keyframes moveShape2 {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  100% {
+  to {
     transform: translate(-5%, -5%) rotate(-10deg);
   }
 }
 
 @keyframes moveShape3 {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  100% {
+  to {
     transform: translate(-3%, 3%) scale(1.1);
   }
 }
