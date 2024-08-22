@@ -19,6 +19,7 @@ import Badge from '@/components/ui/badge/Badge.vue'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import Header from '@/components/Header.vue'
 
 const isHovered = ref(false)
 const showCVIframe = ref(false)
@@ -60,65 +61,9 @@ const toggleLanguage = () => {
 
 <template>
   <div class="grid gap-4">
+    <Header />
+
     <!-- MAIN PAGE -->
-    <div class="flex w-full justify-between">
-      <div
-        v-motion
-        :initial="{ opacity: 0, x: -100 }"
-        :enter="{ opacity: 1, x: 0, transition: { duration: 700, delay: 500 } }"
-        class="hidden text-white lg:block"
-      >
-        <p class="text-xl">{{ t('name') }}</p>
-        <p class="text-xs">{{ t('jobTitle') }}</p>
-      </div>
-
-      <div class="flex w-full items-center justify-between lg:w-fit">
-        <div
-          v-motion
-          :initial="{ opacity: 0, x: -100 }"
-          :enter="{ opacity: 1, x: 0, transition: { duration: 700, delay: 500 } }"
-          class="text-white lg:hidden"
-        >
-          <p class="text-xl">{{ t('name') }}</p>
-          <p class="text-xs">{{ t('jobTitleShort') }}</p>
-        </div>
-
-        <div
-          v-motion
-          :initial="{ opacity: 0, x: 100 }"
-          :enter="{ opacity: 1, x: 0, transition: { duration: 700, delay: 750 } }"
-          class="justify-bewtween flex gap-2.5"
-        >
-          <Button
-            @click="toggleLanguage"
-            size="sm"
-            variant="outline"
-            class="rounded-full border-gray-600 hover:bg-white"
-          >
-            {{ t('languageButton') }}
-          </Button>
-
-          <a href="https://www.linkedin.com/in/rezajaber/" target="_blank">
-            <Button size="sm" class="rounded-full text-background">
-              <Linkedin class="h-4 w-4" />
-            </Button>
-          </a>
-
-          <a href="https://github.com/rezajaber" target="_blank">
-            <Button size="sm" class="rounded-full text-background">
-              <Github class="h-4 w-4" />
-            </Button>
-          </a>
-
-          <a href="mailto:amirrezajaber@gmail.com" target="_blank">
-            <Button size="sm" class="rounded-full text-background">
-              <Mail class="h-4 w-4" />
-            </Button>
-          </a>
-        </div>
-      </div>
-    </div>
-
     <div class="flex flex-col items-center gap-4 lg:flex-row">
       <div class="grid h-full gap-3">
         <div class="flex flex-col gap-3 sm:flex-row lg:hidden">
