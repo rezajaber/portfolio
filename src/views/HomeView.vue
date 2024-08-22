@@ -162,7 +162,7 @@ const toggleLanguage = () => {
 
         <!-- WAS ICH MACHE -->
         <div class="flex w-full flex-col gap-3 sm:flex-row lg:h-40">
-          <h3 class="-mb-2 text-center text-lg font-medium text-white sm:hidden">MY SKILLS</h3>
+          <h3 class="-mb-2 text-lg font-medium text-white sm:hidden">MY SKILLS</h3>
 
           <Card
             v-motion
