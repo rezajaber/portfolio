@@ -216,7 +216,7 @@ const toggleLanguage = () => {
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 700, delay: 400 } }"
-            class="glassy relative flex flex-col justify-between gap-2 sm:w-3/4 lg:justify-end"
+            class="glassy relative flex cursor-pointer flex-col justify-between gap-2 sm:w-3/4 lg:justify-end"
           >
             <CardHeader>
               <Projector class="card-icon h-5 w-5 stroke-turquoise" />
