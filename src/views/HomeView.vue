@@ -285,7 +285,7 @@ const aboutMeContent = computed(() => [
             v-motion
             :initial="{ opacity: 0, scale: 0.9 }"
             :enter="{ opacity: 1, scale: 1, transition: { duration: 400, delay: 200 } }"
-            src="../assets/img/me.webp"
+            src="../assets/img/me-side.webp"
             :class="[
               'h-[584px] w-full rounded-xl object-cover transition-all duration-300',
               { 'brightness-[0.25]': isHovered }
