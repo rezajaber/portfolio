@@ -100,7 +100,7 @@ const aboutMeContent = computed(() => [
             v-motion
             :initial="{ opacity: 0, scale: 0.9 }"
             :enter="{ opacity: 1, scale: 1, transition: { duration: 700, delay: 225 } }"
-            src="../assets/img/friends.webp"
+            src="../assets/img/me-smile.webp"
             class="h-80 rounded-xl object-cover sm:w-1/2"
             alt="Profile Image"
           />
